@@ -26,8 +26,12 @@ jobs:
           sudo apt-get install -y lftp
           lftp -u "laylabo@horskadr.mg,$FTP_PASSWORD" horskadr.mg <<'EOF'
           set ftp:ssl-allow no
-          set net:timeout 30
-          set net:max-retries 3
-          mirror --reverse --delete --verbose --ignore-time ./dist/ /
+          set ftp:passive-mode true
+          set ftp:prefer-epsv false
+          set net:timeout 60
+          set net:max-retries 6
+          set net:reconnect-interval-base 5
+          set net:reconnect-interval-multiplier 1
+          mirror --reverse --delete --verbose --ignore-time --parallel=2 ./dist/ /
           quit
           EOF
