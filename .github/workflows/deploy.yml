@@ -27,5 +27,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: domains/laylabo.horskadr.mg/public_html/
+          security: loose
           dangerous-clean-slate: false
           log-level: verbose
