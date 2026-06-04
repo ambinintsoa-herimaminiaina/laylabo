@@ -1,0 +1,104 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'LayLabo — SaaS & Apps mobiles · HORS KADR',
+  description = 'LayLabo est le laboratoire digital de HORS KADR. SaaS, applications mobiles et solutions tech Made in Madagasikara.',
+} = Astro.props;
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Progress bar -->
+    <div id="ll-progress"></div>
+    <!-- Film grain overlay -->
+    <div class="fx-grain" aria-hidden="true"></div>
+    <!-- Grid overlay -->
+    <div class="fx-grid" aria-hidden="true"></div>
+
+    <slot />
+
+    <script>
+      import gsap from 'gsap';
+      import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.utils.toArray<HTMLElement>('.reveal').forEach((el) => {
+        const delay = el.classList.contains('d1') ? 0.1
+          : el.classList.contains('d2') ? 0.2
+          : el.classList.contains('d3') ? 0.3
+          : 0;
+
+        gsap.fromTo(
+          el,
+          { opacity: 0, y: 46 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            delay,
+            ease: 'power3.out',
+            scrollTrigger: { trigger: el, start: 'top 90%', once: true },
+          }
+        );
+      });
+
+      gsap.to('#ll-progress', {
+        scaleX: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: document.body,
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: true,
+        },
+      });
+
+      const track = document.querySelector<HTMLElement>('.marquee .track');
+      if (track) {
+        gsap.to(track, { x: '-50%', duration: 25, ease: 'none', repeat: -1 });
+      }
+
+      const nav = document.getElementById('ll-nav');
+      if (nav) {
+        const onScroll = () => nav.classList.toggle('solid', window.scrollY > 40);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      }
+
+      const sections = document.querySelectorAll<HTMLElement>('section[id], header[id]');
+      const navLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-links a[href^="#"]');
+      if (navLinks.length && sections.length) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                navLinks.forEach((a) => {
+                  a.classList.toggle('active', a.getAttribute('href') === `#${entry.target.id}`);
+                });
+              }
+            });
+          },
+          { rootMargin: '-40% 0px -55% 0px' }
+        );
+        sections.forEach((s) => observer.observe(s));
+      }
+    </script>
+  </body>
+</html>

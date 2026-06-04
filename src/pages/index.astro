@@ -1,0 +1,167 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <!-- NAV -->
+  <nav id="ll-nav">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-mark">Lay<span>Labo</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#produits">Produits</a></li>
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://horskadr.mg" class="nav-back">
+      ← horskadr.mg
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <div class="wrap">
+      <div class="stage">
+        <div class="hero-eyebrow reveal">
+          <span class="dot"></span>
+          <span>LayLabo · Laboratoire digital</span>
+          <span style="color:var(--ink-faint)">— HORS KADR</span>
+        </div>
+        <h1 class="hero-title reveal d1">
+          On build.<br />
+          <span class="accent">On ship.</span>
+        </h1>
+        <p class="hero-sub reveal d2">
+          SaaS, applications mobiles et solutions tech <b>Made in Madagasikara</b>.<br />
+          Des produits pensés pour durer.
+        </p>
+        <div class="hero-cta reveal d3">
+          <a href="#produits" class="btn-primary">Voir les produits</a>
+          <a href="#contact" class="btn-ghost">Travailler avec nous</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <div class="track">
+      <span>SaaS</span><span class="sep">///</span>
+      <span>Apps mobiles</span><span class="sep">///</span>
+      <span>Produits digitaux</span><span class="sep">///</span>
+      <span>Made in Madagasikara</span><span class="sep">///</span>
+      <span>HORS KADR Digital Lab</span><span class="sep">///</span>
+      <span>SaaS</span><span class="sep">///</span>
+      <span>Apps mobiles</span><span class="sep">///</span>
+      <span>Produits digitaux</span><span class="sep">///</span>
+      <span>Made in Madagasikara</span><span class="sep">///</span>
+      <span>HORS KADR Digital Lab</span><span class="sep">///</span>
+    </div>
+  </div>
+
+  <!-- PRODUITS -->
+  <section class="sec" id="produits">
+    <div class="wrap">
+      <div class="seclabel">
+        <span class="idx">01</span>
+        <span>Nos produits</span>
+        <span class="mg">— Vokatra</span>
+        <span class="fill"></span>
+      </div>
+      <h2 class="h2-disp reveal">Ce qu'on construit</h2>
+      <div class="produits-grid">
+        <!-- Produit placeholder — à remplacer -->
+        <div class="produit-card reveal">
+          <span class="produit-no">P.001</span>
+          <h3 class="produit-name">Nom du produit</h3>
+          <p class="produit-desc">Description courte du produit ou de l'application. Problème résolu, cible visée.</p>
+          <span class="produit-tag live"><span class="dot" style="width:6px;height:6px"></span> Live</span>
+        </div>
+        <div class="produit-card reveal d1">
+          <span class="produit-no">P.002</span>
+          <h3 class="produit-name">Nom du produit</h3>
+          <p class="produit-desc">Description courte du produit ou de l'application. Problème résolu, cible visée.</p>
+          <span class="produit-tag">En développement</span>
+        </div>
+        <div class="produit-card reveal d2">
+          <span class="produit-no">P.003</span>
+          <h3 class="produit-name">Nom du produit</h3>
+          <p class="produit-desc">Description courte du produit ou de l'application. Problème résolu, cible visée.</p>
+          <span class="produit-tag">Bientôt</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION -->
+  <section class="sec" id="vision">
+    <div class="wrap">
+      <div class="seclabel">
+        <span class="idx">02</span>
+        <span>Vision</span>
+        <span class="mg">— Fahitana</span>
+        <span class="fill"></span>
+      </div>
+      <div class="contact-grid">
+        <h2 class="h2-disp reveal" style="margin-bottom:0">
+          Des produits<br />
+          <span style="color:var(--red)">souverains.</span>
+        </h2>
+        <div style="border-left:2px solid var(--red);padding-left:28px" class="reveal d1">
+          <p style="font-size:clamp(14px,1.5vw,16px);color:var(--ink-dim);line-height:1.8;margin-bottom:16px">
+            LayLabo construit des outils digitaux pensés pour le marché malgache et africain — sans dépendre de l'extérieur.
+          </p>
+          <p style="font-size:clamp(14px,1.5vw,16px);color:var(--ink-dim);line-height:1.8">
+            Chaque produit est conçu pour générer de l'impact réel : économiser du temps, créer de la valeur, et rester entre les mains de ceux qui l'utilisent.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="sec" id="contact">
+    <div class="wrap">
+      <div class="seclabel">
+        <span class="idx">03</span>
+        <span>Contact</span>
+        <span class="mg">— Fifandraisana</span>
+        <span class="fill"></span>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <h2 class="contact-title reveal">
+            On parle ?
+          </h2>
+          <div class="hero-cta reveal d1">
+            <a href="mailto:laylabo@horskadr.mg" class="btn-primary">laylabo@horskadr.mg</a>
+          </div>
+        </div>
+        <div class="contact-info reveal d1">
+          <div class="item">
+            <span class="label">Entité</span>
+            <span class="val">LayLabo · HORS KADR</span>
+          </div>
+          <div class="item">
+            <span class="label">Localisation</span>
+            <span class="val">Antananarivo, Madagasikara</span>
+          </div>
+          <div class="item">
+            <span class="label">Email</span>
+            <span class="val">laylabo@horskadr.mg</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-inner">
+        <span class="footer-copy">© 2025 LayLabo — HORS KADR · Antananarivo, Madagasikara</span>
+        <a href="https://horskadr.mg" class="footer-back">← horskadr.mg</a>
+      </div>
+    </div>
+  </footer>
+</Layout>
