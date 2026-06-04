@@ -85,7 +85,7 @@ const {
       }
 
       const sections = document.querySelectorAll<HTMLElement>('section[id], header[id]');
-      const navLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-links a[href^="#"]');
+      const navLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-pill a[href^="#"], .nav-links a[href^="#"]');
       if (navLinks.length && sections.length) {
         const observer = new IntersectionObserver(
           (entries) => {

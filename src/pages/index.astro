@@ -4,126 +4,168 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
 
-  <!-- NAV -->
+  <!-- ══════════════════════════════════════════════════
+       NAV — logo · pill center · cta right
+       ══════════════════════════════════════════════════ -->
   <nav id="ll-nav">
     <a href="/" class="nav-logo">
       <img src="/assets/logo-white.png" alt="HORS KADR" />
       <span class="nav-logo-sep"></span>
       <span class="nav-logo-sub">LayLabo</span>
     </a>
-    <ul class="nav-links">
-      <li><a href="#secteurs">Secteurs</a></li>
-      <li><a href="#vision">Vision</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="nav-pill">
+      <a href="#problemes">Problèmes</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#projets">Projets</a>
+      <a href="#ambitions">Vision</a>
+      <a href="#contact">Contact</a>
+    </div>
     <a href="https://horskadr.mg" class="nav-cta">horskadr.mg ↗</a>
   </nav>
 
-  <!-- HERO -->
+  <!-- ══════════════════════════════════════════════════
+       HERO — centré + floating UI cards (template style)
+       ══════════════════════════════════════════════════ -->
   <header class="hero" id="hero">
-    <div class="wrap" style="width:100%">
-      <div class="hero-layout">
+    <!-- Background blobs -->
+    <div class="hero-blob" id="blob1"></div>
+    <div class="hero-blob-2"></div>
 
-        <!-- LEFT -->
-        <div class="hero-left">
-          <div class="hero-eyebrow reveal">
-            <span class="dot"></span>
-            <span>Labo digital · Madagasikara</span>
-          </div>
-          <h1 class="hero-title reveal d1">
-            Des apps<br />
-            pour les<br />
-            <span class="accent">Malagasy.</span>
-          </h1>
-          <p class="hero-sub reveal d2">
-            LayLabo construit des <b>SaaS et applications mobiles</b> pensés pour résoudre les vrais problèmes du quotidien — santé, hygiène, besoins essentiels, lifestyle.<br /><br />
-            Made in Madagasikara. Pour les Malagasy.
-          </p>
-          <div class="hero-cta reveal d3">
-            <a href="#secteurs" class="btn-primary">Découvrir →</a>
-            <a href="#contact" class="btn-ghost">Travailler avec nous</a>
-          </div>
+    <!-- ✦ star decos -->
+    <span class="star" style="top:22%;left:22%;font-size:18px" id="star1">✦</span>
+    <span class="star" style="top:70%;left:18%;font-size:12px" id="star2">✦</span>
+    <span class="star" style="top:30%;right:22%;font-size:10px" id="star3">✦</span>
+    <span class="star" style="bottom:22%;right:18%;font-size:16px" id="star4">✦</span>
+
+    <!-- Floating card — top left (user health) -->
+    <div class="hfc hfc-tl" id="fc1">
+      <div class="hfc-user">
+        <div class="hfc-avatar">R</div>
+        <div class="hfc-info">
+          <div class="hfc-name">Rakoto Miora</div>
+          <div class="hfc-meta">Utilisateur LayHealth · Sem. 4</div>
         </div>
+      </div>
+      <div class="hfc-bar-wrap">
+        <div class="hfc-bar-fill" style="width:72%"></div>
+      </div>
+    </div>
 
-        <!-- RIGHT — floating phone mockup -->
-        <div class="hero-right">
-          <div class="float-orb" id="orb"></div>
-
-          <!-- Phone mockup -->
-          <div class="phone-mock" id="phone">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-              <div class="phone-app-bar">
-                <span class="phone-app-title">LayHealth</span>
-                <span class="dot" style="width:7px;height:7px"></span>
-              </div>
-              <div class="phone-stat">
-                <span class="phone-stat-label">Rendez-vous aujourd'hui</span>
-                <span class="phone-stat-val">03</span>
-              </div>
-              <div class="phone-chart">
-                <div class="phone-bar" style="height:60%"></div>
-                <div class="phone-bar" style="height:80%"></div>
-                <div class="phone-bar" style="height:45%"></div>
-                <div class="phone-bar" style="height:90%"></div>
-                <div class="phone-bar" style="height:65%"></div>
-                <div class="phone-bar" style="height:75%"></div>
-                <div class="phone-bar" style="height:55%"></div>
-              </div>
-              <div class="phone-stat">
-                <span class="phone-stat-label">Utilisateurs actifs</span>
-                <span class="phone-stat-val">2.4k</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Floating chips -->
-          <div class="float-chip fc-1 reveal d1">
-            <div class="fc-label">Produits</div>
-            <div class="fc-val">5+</div>
-          </div>
-          <div class="float-chip fc-2 reveal d2">
-            <div class="fc-label">Made in</div>
-            <div class="fc-val">Mada 🇲🇬</div>
-          </div>
-          <div class="float-chip fc-3 reveal d1">
-            <div class="fc-label">Stack</div>
-            <div class="fc-val">SaaS · Apps</div>
-          </div>
-
-          <!-- Star decos -->
-          <span class="star" style="top:40px;left:30px;font-size:16px">✦</span>
-          <span class="star" style="bottom:60px;right:20px;font-size:12px">✦</span>
-          <span class="star" style="top:160px;left:-10px;font-size:10px">✦</span>
+    <!-- Floating card — top right (shop seller) -->
+    <div class="hfc hfc-tr" id="fc2">
+      <div class="hfc-user">
+        <div class="hfc-avatar alt">S</div>
+        <div class="hfc-info">
+          <div class="hfc-name">Soavy Rabe</div>
+          <div class="hfc-meta">Vendeur LayShop · 12 cmdés</div>
         </div>
+      </div>
+      <div class="hfc-bar-wrap">
+        <div class="hfc-bar-fill" style="width:88%"></div>
+      </div>
+    </div>
 
+    <!-- Floating card — center right (appointment) -->
+    <div class="hfc hfc-mid" id="fc3">
+      <div class="hfc-appt-label">Consultation mobile</div>
+      <div class="hfc-appt-name">Dr. Andriana Ratsimba</div>
+      <div class="hfc-chips">
+        <span class="hfc-chip">Santé</span>
+        <span class="hfc-chip">Mobile</span>
+        <span class="hfc-chip">RDV</span>
+      </div>
+      <div class="hfc-time">📅 14:30 · Aujourd'hui</div>
+    </div>
+
+    <!-- Floating card — bottom left (dev pill) -->
+    <div class="hfc hfc-bl" id="fc4">
+      <div class="hfc-pill dark">
+        <span>🧑‍💻</span>
+        <span>LayLabo · 3 devs actifs</span>
+      </div>
+    </div>
+
+    <!-- Floating card — bottom right (flag pill) -->
+    <div class="hfc hfc-br" id="fc5">
+      <div class="hfc-pill">
+        <span class="dot" style="width:7px;height:7px"></span>
+        <span>Made in Mada 🇲🇬</span>
+      </div>
+    </div>
+
+    <!-- ── Central content ── -->
+    <div class="hero-center">
+      <div class="hero-eyebrow reveal">
+        <span class="dot"></span>
+        <span>Labo digital · Madagasikara</span>
+      </div>
+
+      <h1 class="hero-title reveal d1">
+        Des SaaS.<br />
+        <span class="ht-ghost">des apps mobiles</span>
+        Pour résoudre<br />
+        <span class="accent">le quotidien.</span>
+      </h1>
+
+      <p class="hero-sub reveal d2">
+        LayLabo conçoit des <b>produits digitaux utiles</b> — pensés pour les Malagasy,
+        construits à Antananarivo. Chaque app répond à un vrai problème de tous les jours.
+      </p>
+
+      <div class="hero-cta reveal d3">
+        <a href="#projets" class="btn-primary">Voir nos projets →</a>
+        <a href="#contact" class="btn-ghost">Travailler avec nous</a>
       </div>
     </div>
   </header>
 
-  <!-- MARQUEE -->
-  <div class="marquee" aria-hidden="true">
-    <div class="track">
-      <span>Santé</span><span class="sep"> /// </span>
-      <span>Hygiène</span><span class="sep"> /// </span>
-      <span>Quotidien</span><span class="sep"> /// </span>
-      <span>Lifestyle</span><span class="sep"> /// </span>
-      <span>SaaS</span><span class="sep"> /// </span>
-      <span>Apps mobiles</span><span class="sep"> /// </span>
-      <span>Made in Madagasikara</span><span class="sep"> /// </span>
-      <span>HORS KADR Digital Lab</span><span class="sep"> /// </span>
-      <span>Santé</span><span class="sep"> /// </span>
-      <span>Hygiène</span><span class="sep"> /// </span>
-      <span>Quotidien</span><span class="sep"> /// </span>
-      <span>Lifestyle</span><span class="sep"> /// </span>
-      <span>SaaS</span><span class="sep"> /// </span>
-      <span>Apps mobiles</span><span class="sep"> /// </span>
-      <span>Made in Madagasikara</span><span class="sep"> /// </span>
-      <span>HORS KADR Digital Lab</span><span class="sep"> /// </span>
+  <!-- ── Sectors press bar ── -->
+  <div class="press-bar">
+    <div class="wrap">
+      <div class="press-inner">
+        <span class="press-label">Secteurs couverts</span>
+        <span class="press-divider"></span>
+        <span class="press-tag">Santé</span>
+        <span class="press-tag">Éducation</span>
+        <span class="press-tag">Transport</span>
+        <span class="press-tag">Commerce</span>
+        <span class="press-tag">Hygiène</span>
+        <span class="press-tag">Lifestyle</span>
+        <span class="press-divider"></span>
+        <span class="press-label">React Native · Node.js · Supabase</span>
+      </div>
     </div>
   </div>
 
-  <!-- STATS BAR -->
+  <!-- ══════════════════════════════════════════════════
+       MARQUEE
+       ══════════════════════════════════════════════════ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Santé</span><span class="sep"> ✦ </span>
+      <span>Éducation</span><span class="sep"> ✦ </span>
+      <span>Transport</span><span class="sep"> ✦ </span>
+      <span>Commerce</span><span class="sep"> ✦ </span>
+      <span>Hygiène</span><span class="sep"> ✦ </span>
+      <span>Lifestyle</span><span class="sep"> ✦ </span>
+      <span>SaaS</span><span class="sep"> ✦ </span>
+      <span>Apps mobiles</span><span class="sep"> ✦ </span>
+      <span>Made in Madagasikara</span><span class="sep"> ✦ </span>
+      <span>Santé</span><span class="sep"> ✦ </span>
+      <span>Éducation</span><span class="sep"> ✦ </span>
+      <span>Transport</span><span class="sep"> ✦ </span>
+      <span>Commerce</span><span class="sep"> ✦ </span>
+      <span>Hygiène</span><span class="sep"> ✦ </span>
+      <span>Lifestyle</span><span class="sep"> ✦ </span>
+      <span>SaaS</span><span class="sep"> ✦ </span>
+      <span>Apps mobiles</span><span class="sep"> ✦ </span>
+      <span>Made in Madagasikara</span><span class="sep"> ✦ </span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       STATS BAR
+       ══════════════════════════════════════════════════ -->
   <section class="stats-bar">
     <div class="wrap">
       <div class="stats-inner reveal">
@@ -132,8 +174,8 @@ import Layout from '../layouts/Layout.astro';
           <span class="stat-label">Produits en dev</span>
         </div>
         <div class="stat-item">
-          <span class="stat-val">4</span>
-          <span class="stat-label">Secteurs</span>
+          <span class="stat-val">6</span>
+          <span class="stat-label">Secteurs ciblés</span>
         </div>
         <div class="stat-item">
           <span class="stat-val">100%</span>
@@ -147,137 +189,410 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- SECTEURS -->
-  <section class="sec" id="secteurs">
+  <!-- ══════════════════════════════════════════════════
+       01 — PROBLÈME GASY
+       ══════════════════════════════════════════════════ -->
+  <section class="sec" id="problemes">
     <div class="wrap">
       <div class="seclabel">
         <span class="idx">01</span>
-        <span>Secteurs</span>
-        <span class="mg">— Sehatra</span>
+        <span>Le problème</span>
+        <span class="mg">— Ny olana</span>
         <span class="fill"></span>
       </div>
-      <h2 class="h2-disp reveal">On intervient où<br />ça manque vraiment</h2>
-      <div class="secteurs-grid">
 
-        <div class="secteur-card reveal">
-          <div class="secteur-icon">🏥</div>
-          <h3 class="secteur-title">Santé</h3>
-          <p class="secteur-desc">
-            Accès aux soins, suivi médical, prise de rendez-vous, télémédecine. Des outils simples pour que chaque Malagasy prenne soin de sa santé.
+      <h2 class="h2-disp reveal">
+        Ce que vivent<br />
+        vraiment les <span class="accent">Malagasy.</span>
+      </h2>
+      <p class="sec-intro reveal d1">
+        Avant de coder une seule ligne, on écoute. On observe. Et ce qu'on voit,
+        c'est un écart béant entre les besoins réels et les outils disponibles.
+      </p>
+
+      <div class="problem-grid">
+
+        <div class="problem-card reveal">
+          <span class="problem-icon">🏥</span>
+          <h3 class="problem-title">Soins inaccessibles</h3>
+          <p class="problem-desc">
+            Prendre rendez-vous avec un médecin prend des heures. Suivre son traitement,
+            impossible sans outil. La santé reste un luxe pour beaucoup.
           </p>
-          <span class="secteur-tag"><span class="dot" style="width:6px;height:6px"></span> En développement</span>
+          <div class="problem-stat">70%</div>
+          <div class="problem-stat-sub">sans accès à des soins adaptés</div>
         </div>
 
-        <div class="secteur-card reveal d1">
-          <div class="secteur-icon">🧼</div>
-          <h3 class="secteur-title">Hygiène</h3>
-          <p class="secteur-desc">
-            Sensibilisation, accès aux produits, suivi des bonnes pratiques. Des solutions digitales qui éduquent et connectent.
+        <div class="problem-card reveal d1">
+          <span class="problem-icon">📚</span>
+          <h3 class="problem-title">Éducation à deux vitesses</h3>
+          <p class="problem-desc">
+            Les ressources pédagogiques existent. Mais elles ne sont ni accessibles,
+            ni adaptées à la réalité malgache. L'écart se creuse à chaque rentrée.
           </p>
-          <span class="secteur-tag"><span class="dot" style="width:6px;height:6px"></span> En réflexion</span>
+          <div class="problem-stat">1 / 3</div>
+          <div class="problem-stat-sub">élèves avec accès à du contenu digital</div>
         </div>
 
-        <div class="secteur-card reveal d1">
-          <div class="secteur-icon">📦</div>
-          <h3 class="secteur-title">Besoin quotidien</h3>
-          <p class="secteur-desc">
-            Courses, livraison, gestion du foyer. Des apps qui simplifient le quotidien des familles malgaches, partout sur le territoire.
+        <div class="problem-card reveal d2">
+          <span class="problem-icon">🚗</span>
+          <h3 class="problem-title">Transport chaotique</h3>
+          <p class="problem-desc">
+            Pas d'info en temps réel. Pas d'application. Juste de l'incertitude à chaque
+            trajet dans les grandes villes. Du temps perdu chaque matin.
           </p>
-          <span class="secteur-tag"><span class="dot" style="width:6px;height:6px"></span> En développement</span>
+          <div class="problem-stat">2h+</div>
+          <div class="problem-stat-sub">perdues en déplacements chaque jour</div>
         </div>
 
-        <div class="secteur-card reveal d2">
-          <div class="secteur-icon">✨</div>
-          <h3 class="secteur-title">Lifestyle</h3>
-          <p class="secteur-desc">
-            Sport, bien-être, culture, loisirs. Des expériences pensées pour une génération malgache qui vit différemment.
+        <div class="problem-card reveal">
+          <span class="problem-icon">🛒</span>
+          <h3 class="problem-title">Commerce sans vitrine</h3>
+          <p class="problem-desc">
+            Des milliers de vendeurs talentueux, invisibles en ligne. Pas de caisse numérique,
+            pas de suivi de stock, pas de clients au-delà de leur quartier.
           </p>
-          <span class="secteur-tag" style="color:var(--ink-faint);border:1px solid var(--line);padding:4px 10px;border-radius:4px">Bientôt</span>
+          <div class="problem-stat">85%</div>
+          <div class="problem-stat-sub">des commerces sans outil digital</div>
+        </div>
+
+        <div class="problem-card reveal d1">
+          <span class="problem-icon">💧</span>
+          <h3 class="problem-title">Hygiène & santé publique</h3>
+          <p class="problem-desc">
+            Les bonnes pratiques ne sont pas vulgarisées là où elles comptent.
+            Les outils d'éducation et de suivi manquent à tous les niveaux.
+          </p>
+          <div class="problem-stat">40%</div>
+          <div class="problem-stat-sub">de foyers sans accès à l'info sanitaire</div>
+        </div>
+
+        <div class="problem-card reveal d2">
+          <span class="problem-icon">💼</span>
+          <h3 class="problem-title">Emploi fragmenté</h3>
+          <p class="problem-desc">
+            Des talents locaux non connectés aux opportunités. CVs perdus dans des boîtes
+            mail. Offres invisibles. Le marché tourne à 20% de son potentiel.
+          </p>
+          <div class="problem-stat">60%</div>
+          <div class="problem-stat-sub">des jeunes diplômés sous-employés</div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- VISION -->
-  <section class="sec" id="vision">
+  <!-- ══════════════════════════════════════════════════
+       02 — NOS SOLUTIONS
+       ══════════════════════════════════════════════════ -->
+  <section class="sec" id="solutions">
     <div class="wrap">
       <div class="seclabel">
         <span class="idx">02</span>
-        <span>Vision</span>
-        <span class="mg">— Fahitana</span>
+        <span>Nos solutions</span>
+        <span class="mg">— Vahaolana</span>
         <span class="fill"></span>
       </div>
-      <div class="vision-grid">
+
+      <div class="solutions-intro">
         <div>
-          <h2 class="vision-title reveal">
-            Des produits<br />
-            <span class="accent">souverains.</span><br />
-            Pour tous.
+          <h2 class="h2-disp reveal">
+            Notre réponse,<br />
+            produit par <span class="accent">produit.</span>
           </h2>
         </div>
-        <div class="vision-body reveal d1">
+        <div class="solutions-body reveal d1">
           <p>
-            LayLabo ne fait pas des apps pour faire des apps. On part d'un problème réel, vécu par des gens réels — et on construit la solution la plus directe possible.
+            On ne fait pas des apps pour faire des apps. Chaque produit LayLabo
+            part d'un problème réel, vécu par des gens réels — et on construit
+            la solution la plus directe possible.
           </p>
           <p>
-            Chaque produit est conçu à Antananarivo, pensé pour le marché malgache, et construit pour durer. Pas de dépendance à l'étranger. Pas de copier-coller d'un modèle qui ne colle pas.
+            Conçu à Antananarivo. Pensé pour le marché malgache.
+            Construit pour durer.
           </p>
-          <p>
-            C'est ça, l'impact. <b style="color:var(--green)">L'Impact.</b>
+        </div>
+      </div>
+
+      <div class="solutions-grid">
+
+        <div class="solution-card reveal">
+          <div class="solution-icon">🏥</div>
+          <div class="solution-app">LayHealth</div>
+          <h3 class="solution-title">Santé digitale</h3>
+          <p class="solution-desc">
+            Prise de RDV médical, suivi de traitement, téléconsultation.
+            Un outil simple pour que chaque Malagasy accède aux soins.
           </p>
+          <span class="solution-status"><span class="dot" style="width:6px;height:6px"></span> En développement</span>
+        </div>
+
+        <div class="solution-card reveal d1">
+          <div class="solution-icon">📚</div>
+          <div class="solution-app">LayLearn</div>
+          <h3 class="solution-title">Éducation accessible</h3>
+          <p class="solution-desc">
+            Cours en malgache et en français, adaptés aux programmes locaux.
+            Du collège à la formation professionnelle, offline inclus.
+          </p>
+          <span class="solution-status"><span class="dot" style="width:6px;height:6px"></span> En conception</span>
+        </div>
+
+        <div class="solution-card reveal d2">
+          <div class="solution-icon">🚗</div>
+          <div class="solution-app">LayMove</div>
+          <h3 class="solution-title">Mobilité urbaine</h3>
+          <p class="solution-desc">
+            Infos trafic en temps réel, covoiturage local, calcul d'itinéraires.
+            Reprendre le contrôle de ses déplacements à Tana et partout.
+          </p>
+          <span class="solution-status"><span class="dot" style="width:6px;height:6px"></span> En conception</span>
+        </div>
+
+        <div class="solution-card reveal">
+          <div class="solution-icon">🛒</div>
+          <div class="solution-app">LayShop</div>
+          <h3 class="solution-title">Commerce local</h3>
+          <p class="solution-desc">
+            Catalogue produits, gestion de commandes, paiement mobile,
+            livraison. La vitrine digitale de chaque vendeur malgache.
+          </p>
+          <span class="solution-status"><span class="dot" style="width:6px;height:6px"></span> En développement</span>
+        </div>
+
+        <div class="solution-card reveal d1">
+          <div class="solution-icon">💧</div>
+          <div class="solution-app">LayClean</div>
+          <h3 class="solution-title">Hygiène & bien-être</h3>
+          <p class="solution-desc">
+            Sensibilisation, bonnes pratiques, accès aux produits essentiels.
+            Une app qui éduque et connecte les familles à des ressources fiables.
+          </p>
+          <span class="solution-status" style="color:var(--ink-faint)">— Bientôt</span>
+        </div>
+
+        <div class="solution-card reveal d2">
+          <div class="solution-icon">💼</div>
+          <div class="solution-app">LayWork</div>
+          <h3 class="solution-title">Emploi & talents</h3>
+          <p class="solution-desc">
+            Mise en relation talents locaux et entreprises. Portfolio digital,
+            offres adaptées au marché malgache, recrutement simplifié.
+          </p>
+          <span class="solution-status" style="color:var(--ink-faint)">— Bientôt</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       03 — PROJETS EN COURS
+       ══════════════════════════════════════════════════ -->
+  <section class="sec" id="projets">
+    <div class="wrap">
+      <div class="seclabel">
+        <span class="idx">03</span>
+        <span>Projets</span>
+        <span class="mg">— Tetikasa</span>
+        <span class="fill"></span>
+      </div>
+
+      <h2 class="h2-disp reveal">
+        Ce qu'on <span class="accent">lance.</span>
+      </h2>
+      <p class="sec-intro reveal d1">
+        Trois produits phares dans les tuyaux. Chacun répond à un vrai besoin.
+        Chacun est construit avec les mêmes standards qu'une startup tech internationale.
+      </p>
+
+      <div class="projets-grid">
+
+        <!-- Project 1: LayHealth (featured) -->
+        <div class="projet-card featured reveal">
+          <div class="projet-top">
+            <div class="projet-logo">🏥</div>
+            <span class="projet-badge active">
+              <span class="dot" style="width:5px;height:5px"></span>
+              En développement
+            </span>
+          </div>
+          <div class="projet-name">LayHealth</div>
+          <div class="projet-tagline">Votre santé, dans votre poche.</div>
+          <p class="projet-desc">
+            La plateforme de santé digitale pensée pour Madagascar. Prenez rendez-vous
+            avec un médecin en 2 minutes. Suivez vos traitements. Consultez à distance.
+            LayHealth rend les soins accessibles à ceux qui en ont le plus besoin —
+            partout sur le territoire, même hors connexion.
+          </p>
+          <div class="projet-stack">
+            <span class="stack-tag">React Native</span>
+            <span class="stack-tag">Node.js</span>
+            <span class="stack-tag">Supabase</span>
+            <span class="stack-tag">Expo</span>
+          </div>
+          <a href="#contact" class="projet-link">Suivre le projet →</a>
+        </div>
+
+        <!-- Project 2: LayShop -->
+        <div class="projet-card reveal d1">
+          <div class="projet-top">
+            <div class="projet-logo">🛒</div>
+            <span class="projet-badge active">
+              <span class="dot" style="width:5px;height:5px"></span>
+              En développement
+            </span>
+          </div>
+          <div class="projet-name">LayShop</div>
+          <div class="projet-tagline">Le commerce local, digitalisé.</div>
+          <p class="projet-desc">
+            Une solution e-commerce pensée pour les vendeurs malgaches. Catalogue,
+            commandes, paiement mobile (MVola, Orange Money), livraison locale.
+            Chaque marchand devient une boutique en ligne en moins de 10 minutes.
+          </p>
+          <div class="projet-stack">
+            <span class="stack-tag">React Native</span>
+            <span class="stack-tag">Next.js</span>
+            <span class="stack-tag">Stripe / MVola</span>
+          </div>
+          <a href="#contact" class="projet-link">Suivre le projet →</a>
+        </div>
+
+        <!-- Project 3: LayMove -->
+        <div class="projet-card reveal d2">
+          <div class="projet-top">
+            <div class="projet-logo">🚗</div>
+            <span class="projet-badge concept">En conception</span>
+          </div>
+          <div class="projet-name">LayMove</div>
+          <div class="projet-tagline">Se déplacer, enfin simplement.</div>
+          <p class="projet-desc">
+            L'app de mobilité urbaine pour Antananarivo et les grandes villes.
+            Infos trafic en temps réel, covoiturage de proximité, calcul d'itinéraires
+            taxi-brousse. Parce que perdre 2h dans les embouteillages, c'est fini.
+          </p>
+          <div class="projet-stack">
+            <span class="stack-tag">Flutter</span>
+            <span class="stack-tag">Maps API</span>
+            <span class="stack-tag">Firebase</span>
+          </div>
+          <span class="projet-link disabled">Bientôt disponible</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       04 — AMBITIONS & VISION
+       ══════════════════════════════════════════════════ -->
+  <section class="sec" id="ambitions">
+    <div class="wrap">
+      <div class="seclabel">
+        <span class="idx">04</span>
+        <span>Ambitions</span>
+        <span class="mg">— Tanjona</span>
+        <span class="fill"></span>
+      </div>
+
+      <div class="ambitions-wrap">
+        <div class="ambitions-left">
+          <h2 class="ambitions-title reveal">
+            On vise<br />
+            <span class="ghost">très</span>
+            <span class="accent">haut.</span>
+          </h2>
+          <p class="ambitions-quote reveal d1">
+            Dans 5 ans, chaque Malagasy devrait pouvoir accéder à un soin,
+            commander un produit, trouver un trajet — avec une app conçue ici,
+            par et pour les nôtres.<br /><br />
+            Pas de dépendance à l'étranger. Pas de copier-coller d'un modèle
+            qui ne colle pas. C'est ça, la <strong style="color:var(--green)">souveraineté digitale.</strong>
+          </p>
+        </div>
+
+        <div class="ambitions-grid reveal d1">
+          <div class="ambition-item">
+            <div class="ambition-num">10+</div>
+            <div class="ambition-label">Produits sur 5 ans</div>
+          </div>
+          <div class="ambition-item">
+            <div class="ambition-num">1M</div>
+            <div class="ambition-label">Utilisateurs cibles</div>
+          </div>
+          <div class="ambition-item">
+            <div class="ambition-num">6</div>
+            <div class="ambition-label">Secteurs couverts</div>
+          </div>
+          <div class="ambition-item">
+            <div class="ambition-num">100%</div>
+            <div class="ambition-label">Made in Madagasikara</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ══════════════════════════════════════════════════
+       05 — CONTACT
+       ══════════════════════════════════════════════════ -->
   <section class="sec" id="contact">
     <div class="wrap">
       <div class="seclabel">
-        <span class="idx">03</span>
+        <span class="idx">05</span>
         <span>Contact</span>
         <span class="mg">— Fifandraisana</span>
         <span class="fill"></span>
       </div>
+
       <div class="contact-grid">
         <div>
           <h2 class="contact-title reveal">
             On parle <span class="accent">?</span>
           </h2>
-          <div class="hero-cta reveal d1">
+          <p class="sec-intro reveal d1" style="max-width:440px">
+            Vous avez un projet, une idée ou un problème à résoudre ?
+            On est là. Que vous soyez investisseur, partenaire ou utilisateur potentiel.
+          </p>
+          <div class="hero-cta reveal d2" style="justify-content:flex-start">
             <a href="mailto:laylabo@horskadr.mg" class="btn-primary">laylabo@horskadr.mg →</a>
           </div>
         </div>
         <div class="contact-info reveal d1">
-          <div class="item">
-            <span class="label">Entité</span>
-            <span class="val">LayLabo · HORS KADR</span>
+          <div class="ci-item">
+            <span class="ci-label">Entité</span>
+            <span class="ci-val">LayLabo · HORS KADR</span>
           </div>
-          <div class="item">
-            <span class="label">Localisation</span>
-            <span class="val">Antananarivo, Madagasikara</span>
+          <div class="ci-item">
+            <span class="ci-label">Localisation</span>
+            <span class="ci-val">Antananarivo, Madagasikara</span>
           </div>
-          <div class="item">
-            <span class="label">Coordonnées</span>
-            <span class="val">-18.8792° S · 47.5079° E</span>
+          <div class="ci-item">
+            <span class="ci-label">Coordonnées GPS</span>
+            <span class="ci-val">-18.8792° S · 47.5079° E</span>
           </div>
-          <div class="item">
-            <span class="label">Email</span>
-            <span class="val">laylabo@horskadr.mg</span>
+          <div class="ci-item">
+            <span class="ci-label">Email</span>
+            <span class="ci-val">laylabo@horskadr.mg</span>
+          </div>
+          <div class="ci-item">
+            <span class="ci-label">Site parent</span>
+            <span class="ci-val">horskadr.mg</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ══════════════════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════════════════ -->
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-inner">
         <div style="display:flex;align-items:center;gap:12px">
-          <img src="/assets/logo-white.png" alt="HORS KADR" style="height:22px;opacity:.5" />
-          <span class="footer-copy">LayLabo — © 2025 HORS KADR</span>
+          <img src="/assets/logo-white.png" alt="HORS KADR" style="height:20px;opacity:.4" />
+          <span class="footer-copy">LayLabo — © 2025 HORS KADR · Tous droits réservés</span>
         </div>
         <a href="https://horskadr.mg" class="footer-back">← horskadr.mg</a>
       </div>
@@ -286,40 +601,61 @@ import Layout from '../layouts/Layout.astro';
 
 </Layout>
 
+<!-- ════════════════════════════════════════════════════════
+     GSAP — hero floating cards + blobs + stars
+     ════════════════════════════════════════════════════════ -->
 <script>
   import gsap from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
   gsap.registerPlugin(ScrollTrigger);
 
-  // Floating phone animation
-  const phone = document.getElementById('phone');
-  if (phone) {
-    gsap.to(phone, {
-      y: -18, duration: 3, ease: 'sine.inOut', repeat: -1, yoyo: true,
-    });
-  }
+  // ── Blobs breathe ──────────────────────────────────────
+  gsap.to('#blob1', {
+    scale: 1.15, opacity: .8,
+    duration: 6, ease: 'sine.inOut', repeat: -1, yoyo: true,
+  });
 
-  // Floating orb animation
-  const orb = document.getElementById('orb');
-  if (orb) {
-    gsap.to(orb, {
-      scale: 1.15, opacity: .7, duration: 4, ease: 'sine.inOut', repeat: -1, yoyo: true,
+  // ── Floating cards — each floats at its own rhythm ────
+  const cards = ['#fc1','#fc2','#fc3','#fc4','#fc5'];
+  cards.forEach((id, i) => {
+    const el = document.querySelector<HTMLElement>(id);
+    if (!el) return;
+    gsap.to(el, {
+      y: i % 2 === 0 ? -14 : 10,
+      duration: 2.8 + i * 0.55,
+      ease: 'sine.inOut', repeat: -1, yoyo: true,
     });
-  }
-
-  // Floating chips
-  document.querySelectorAll<HTMLElement>('.float-chip').forEach((chip, i) => {
-    gsap.to(chip, {
-      y: i % 2 === 0 ? -10 : 10,
-      duration: 2.5 + i * 0.5,
+    gsap.to(el, {
+      rotate: i % 2 === 0 ? 1.2 : -1,
+      duration: 3.5 + i * 0.7,
       ease: 'sine.inOut', repeat: -1, yoyo: true,
     });
   });
 
-  // Stars rotation
-  document.querySelectorAll<HTMLElement>('.star').forEach((star, i) => {
-    gsap.to(star, {
-      rotation: 360, duration: 8 + i * 2, ease: 'none', repeat: -1,
+  // ── Stars rotate ───────────────────────────────────────
+  ['#star1','#star2','#star3','#star4'].forEach((id, i) => {
+    const el = document.querySelector<HTMLElement>(id);
+    if (!el) return;
+    gsap.to(el, {
+      rotation: 360, duration: 9 + i * 2.5,
+      ease: 'none', repeat: -1,
+    });
+  });
+
+  // ── Ambition numbers count up on scroll ───────────────
+  document.querySelectorAll<HTMLElement>('.ambition-num').forEach((el) => {
+    const raw  = el.textContent?.trim() ?? '';
+    const suffix = raw.replace(/[\d.]/g, '');
+    const num  = parseFloat(raw.replace(/[^\d.]/g, ''));
+    if (isNaN(num)) return;
+    const obj = { val: 0 };
+    gsap.to(obj, {
+      val: num, duration: 1.8, ease: 'power2.out',
+      scrollTrigger: { trigger: el, start: 'top 88%', once: true },
+      onUpdate() {
+        const v = obj.val;
+        el.textContent = (Number.isInteger(num) ? Math.round(v) : v.toFixed(1)) + suffix;
+      },
     });
   });
 </script>
