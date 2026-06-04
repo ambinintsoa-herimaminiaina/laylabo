@@ -28,6 +28,6 @@ jobs:
           set ftp:ssl-allow no
           set net:timeout 30
           set net:max-retries 3
-          mirror --reverse --delete --verbose --ignore-time ./dist/ ./
+          mirror --reverse --delete --verbose --ignore-time ./dist/ /
           quit
           EOF
