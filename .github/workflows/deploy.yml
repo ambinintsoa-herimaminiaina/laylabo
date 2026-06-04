@@ -19,14 +19,14 @@ jobs:
 
       - run: npm run build
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: horskadr.mg
-          username: laylabo@horskadr.mg
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: domains/laylabo.horskadr.mg/public_html/
-          security: loose
-          dangerous-clean-slate: false
-          log-level: verbose
+      - name: Deploy via LFTP
+        run: |
+          sudo apt-get install -y lftp
+          lftp -e "
+            set ftp:ssl-allow no;
+            set net:timeout 30;
+            set net:max-retries 3;
+            mirror --reverse --delete --verbose --ignore-time \
+              ./dist/ domains/laylabo.horskadr.mg/public_html/;
+            quit
+          " -u "laylabo@horskadr.mg,${{ secrets.FTP_PASSWORD }}" horskadr.mg
