@@ -20,13 +20,14 @@ jobs:
       - run: npm run build
 
       - name: Deploy via LFTP
+        env:
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
           sudo apt-get install -y lftp
-          lftp -e "
-            set ftp:ssl-allow no;
-            set net:timeout 30;
-            set net:max-retries 3;
-            mirror --reverse --delete --verbose --ignore-time \
-              ./dist/ domains/laylabo.horskadr.mg/public_html/;
-            quit
-          " -u "laylabo@horskadr.mg,${{ secrets.FTP_PASSWORD }}" horskadr.mg
+          lftp -u "laylabo@horskadr.mg,$FTP_PASSWORD" horskadr.mg <<'EOF'
+          set ftp:ssl-allow no
+          set net:timeout 30
+          set net:max-retries 3
+          mirror --reverse --delete --verbose --ignore-time ./dist/ domains/laylabo.horskadr.mg/public_html/
+          quit
+          EOF
