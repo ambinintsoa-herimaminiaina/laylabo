@@ -922,14 +922,19 @@ body {
   mix-blend-mode: multiply;
 }
 /* La map est DERRIÈRE l'image (z:1), visible dans la zone écran */
+/* clip-path polygon = forme exacte de l'écran du phone (trapèze perspective) */
 .marary-screen-map {
   position: absolute;
-  top: 6.5%; left: 17%; right: 5%; bottom: 5%;
+  top: 0; left: 0; right: 0; bottom: 0;
   z-index: 1;
-  transform: perspective(900px) rotateY(15deg) rotateX(-2.5deg);
-  transform-origin: 12% 50%;
+  /* Coordonnées calibrées sur phone-mockup.png (perspective ~15° Y-axis) */
+  clip-path: polygon(
+    19% 7%,   /* haut-gauche  */
+    90% 14%,  /* haut-droite  */
+    88% 92%,  /* bas-droite   */
+    20% 87%   /* bas-gauche   */
+  );
   overflow: hidden;
-  border-radius: 5% 4.5% 4.5% 5%;
   background: #f2ead3;
   display: flex; flex-direction: column;
 }
