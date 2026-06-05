@@ -1079,8 +1079,9 @@ body {
   background: var(--green-dark);
   position: relative; z-index: 2;
 }
-.sec-dark .seclabel { color: rgba(244,243,241,.4); }
+.sec-dark .seclabel { color: rgba(244,243,241,.55); }
 .sec-dark .seclabel .idx { color: var(--green); }
+.sec-dark .seclabel .mg { color: var(--green); opacity: .7; }
 .sec-dark .seclabel .fill { background: rgba(244,243,241,.1); }
 .sec-dark .h2-disp { color: #f4f3f1; }
 .sec-dark .sec-intro { color: rgba(244,243,241,.55); }
