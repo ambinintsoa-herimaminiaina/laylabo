@@ -28,10 +28,12 @@ jobs:
           set ftp:ssl-allow no
           set ftp:passive-mode true
           set ftp:prefer-epsv false
-          set net:timeout 60
-          set net:max-retries 6
-          set net:reconnect-interval-base 5
+          set ftp:use-feat false
+          set ftp:nop-interval 10
+          set net:timeout 120
+          set net:max-retries 8
+          set net:reconnect-interval-base 10
           set net:reconnect-interval-multiplier 1
-          mirror --reverse --delete --verbose --ignore-time --parallel=2 ./dist/ /
+          mirror --reverse --delete --verbose --ignore-time ./dist/ /
           quit
           EOF
