@@ -357,6 +357,74 @@ body {
   background: rgba(11,22,13,.06); border-color: rgba(11,22,13,.12); color: var(--ink-dim);
 }
 
+/* ── Floating cards problem / solution ─────────────────── */
+.hfc-prob {
+  border-color: rgba(239,68,68,.18) !important;
+  background: rgba(255,255,255,.92) !important;
+}
+.hfc-sol {
+  border-color: rgba(13,206,107,.3) !important;
+  background: rgba(255,255,255,.92) !important;
+}
+
+/* Tag labels */
+.hfc-pair-tag {
+  font-family: var(--mono); font-size: 9px;
+  letter-spacing: .14em; text-transform: uppercase;
+  margin-bottom: 8px; display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 10px; border-radius: 100px;
+}
+.hfc-tag-prob {
+  color: #dc2626; background: rgba(239,68,68,.08);
+  border: 1px solid rgba(239,68,68,.18);
+}
+.hfc-tag-sol {
+  color: var(--green-deep); background: rgba(13,206,107,.1);
+  border: 1px solid rgba(13,206,107,.22);
+}
+
+.hfc-pair-icon { font-size: 24px; margin-bottom: 6px; display: block; }
+.hfc-pair-title {
+  font-family: var(--display); font-size: 13px;
+  font-weight: 700; color: var(--ink); margin-bottom: 4px;
+  max-width: 180px; line-height: 1.3;
+}
+.hfc-pair-sub {
+  font-family: var(--mono); font-size: 10px;
+  color: var(--ink-faint); letter-spacing: .03em;
+}
+
+/* Solution card specifics */
+.hfc-sol-app-name {
+  font-family: var(--mono); font-size: 11px; font-weight: 700;
+  color: var(--green-deep); letter-spacing: .08em;
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.hfc-sol-check {
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--mono); font-size: 10px;
+  color: var(--green-deep); margin-top: 8px;
+  font-weight: 700;
+}
+.hfc-check-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green); flex-shrink: 0;
+}
+
+/* Flèches entre les paires */
+.hfc-arrow {
+  position: absolute; z-index: 4;
+  font-size: 22px; color: var(--green);
+  font-weight: 900; opacity: .7;
+  pointer-events: none;
+  text-shadow: 0 2px 12px rgba(13,206,107,.3);
+}
+.hfc-arrow-1 { top: 20%; left: calc(50% - 360px); }
+.hfc-arrow-2 { bottom: 24%; left: calc(50% - 360px); }
+@media (max-width: 1150px) {
+  .hfc-arrow { display: none; }
+}
+
 /* Star déco */
 .star { position: absolute; color: var(--green); opacity: .45; pointer-events: none; z-index: 3; }
 

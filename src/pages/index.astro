@@ -14,10 +14,10 @@ import Layout from '../layouts/Layout.astro';
       <span class="nav-logo-sub">LayLabo</span>
     </a>
     <div class="nav-pill">
-      <a href="#problemes">Problèmes</a>
-      <a href="#solutions">Solutions</a>
+      <a href="#problemes">Problèmes Gasy</a>
+      <a href="#solutions">Nos Solutions</a>
       <a href="#projets">Projets</a>
-      <a href="#ambitions">Vision</a>
+      <a href="#vision">Vision</a>
       <a href="#contact">Contact</a>
     </div>
     <a href="https://horskadr.mg" class="nav-cta">horskadr.mg ↗</a>
@@ -37,60 +37,62 @@ import Layout from '../layouts/Layout.astro';
     <span class="star" style="top:30%;right:22%;font-size:10px" id="star3">✦</span>
     <span class="star" style="bottom:22%;right:18%;font-size:16px" id="star4">✦</span>
 
-    <!-- Floating card — top left (user health) -->
-    <div class="hfc hfc-tl" id="fc1">
-      <div class="hfc-user">
-        <div class="hfc-avatar">R</div>
-        <div class="hfc-info">
-          <div class="hfc-name">Rakoto Miora</div>
-          <div class="hfc-meta">Utilisateur LayHealth · Sem. 4</div>
-        </div>
-      </div>
-      <div class="hfc-bar-wrap">
-        <div class="hfc-bar-fill" style="width:72%"></div>
+    <!-- ── Paire 1 : Santé ─────────────────────────── -->
+    <!-- Problème — top left -->
+    <div class="hfc hfc-tl hfc-prob" id="fc1">
+      <div class="hfc-pair-tag hfc-tag-prob">Problème</div>
+      <div class="hfc-pair-icon">🏥</div>
+      <div class="hfc-pair-title">Pas de médecin disponible</div>
+      <div class="hfc-pair-sub">3 semaines d'attente minimum</div>
+    </div>
+
+    <!-- Flèche 1 -->
+    <div class="hfc-arrow hfc-arrow-1" id="fc-arr1">→</div>
+
+    <!-- Solution — top right -->
+    <div class="hfc hfc-tr hfc-sol" id="fc2">
+      <div class="hfc-pair-tag hfc-tag-sol">Solution</div>
+      <div class="hfc-sol-app-name">LayHealth</div>
+      <div class="hfc-pair-title">RDV médical en 2 min</div>
+      <div class="hfc-sol-check">
+        <span class="hfc-check-dot"></span>
+        Consulté aujourd'hui ✓
       </div>
     </div>
 
-    <!-- Floating card — top right (shop seller) -->
-    <div class="hfc hfc-tr" id="fc2">
-      <div class="hfc-user">
-        <div class="hfc-avatar alt">S</div>
-        <div class="hfc-info">
-          <div class="hfc-name">Soavy Rabe</div>
-          <div class="hfc-meta">Vendeur LayShop · 12 cmdés</div>
-        </div>
-      </div>
-      <div class="hfc-bar-wrap">
-        <div class="hfc-bar-fill" style="width:88%"></div>
+    <!-- ── Paire 2 : Commerce ──────────────────────── -->
+    <!-- Problème — bottom left -->
+    <div class="hfc hfc-bl hfc-prob" id="fc3">
+      <div class="hfc-pair-tag hfc-tag-prob">Problème</div>
+      <div class="hfc-pair-icon">🛒</div>
+      <div class="hfc-pair-title">Commerce invisible en ligne</div>
+      <div class="hfc-pair-sub">Pas de caisse. Pas de clients.</div>
+    </div>
+
+    <!-- Flèche 2 -->
+    <div class="hfc-arrow hfc-arrow-2" id="fc-arr2">→</div>
+
+    <!-- Solution — bottom right -->
+    <div class="hfc hfc-br hfc-sol" id="fc4">
+      <div class="hfc-pair-tag hfc-tag-sol">Solution</div>
+      <div class="hfc-sol-app-name">LayShop</div>
+      <div class="hfc-pair-title">Boutique en ligne en 10 min</div>
+      <div class="hfc-sol-check">
+        <span class="hfc-check-dot"></span>
+        12 commandes ce mois ✓
       </div>
     </div>
 
-    <!-- Floating card — center right (appointment) -->
-    <div class="hfc hfc-mid" id="fc3">
-      <div class="hfc-appt-label">Consultation mobile</div>
-      <div class="hfc-appt-name">Dr. Andriana Ratsimba</div>
+    <!-- Badge Made in Mada — centré bas -->
+    <div class="hfc hfc-mid" id="fc5">
+      <div class="hfc-appt-label">HORS KADR Digital Lab</div>
+      <div class="hfc-appt-name">LayLabo</div>
       <div class="hfc-chips">
-        <span class="hfc-chip">Santé</span>
-        <span class="hfc-chip">Mobile</span>
-        <span class="hfc-chip">RDV</span>
+        <span class="hfc-chip">SaaS</span>
+        <span class="hfc-chip">Apps mobiles</span>
+        <span class="hfc-chip">🇲🇬</span>
       </div>
-      <div class="hfc-time">📅 14:30 · Aujourd'hui</div>
-    </div>
-
-    <!-- Floating card — bottom left (dev pill) -->
-    <div class="hfc hfc-bl" id="fc4">
-      <div class="hfc-pill dark">
-        <span>🧑‍💻</span>
-        <span>LayLabo · 3 devs actifs</span>
-      </div>
-    </div>
-
-    <!-- Floating card — bottom right (flag pill) -->
-    <div class="hfc hfc-br" id="fc5">
-      <div class="hfc-pill">
-        <span class="dot" style="width:7px;height:7px"></span>
-        <span>Made in Mada 🇲🇬</span>
-      </div>
+      <div class="hfc-time">Made in Madagasikara</div>
     </div>
 
     <!-- ── Central content ── -->
@@ -486,7 +488,7 @@ import Layout from '../layouts/Layout.astro';
   <!-- ══════════════════════════════════════════════════
        04 — AMBITIONS & VISION
        ══════════════════════════════════════════════════ -->
-  <section class="sec sec-dark" id="ambitions">
+  <section class="sec sec-dark" id="vision">
     <div class="wrap">
       <div class="seclabel">
         <span class="idx">04</span>
@@ -560,24 +562,27 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div class="contact-info reveal d1">
           <div class="ci-item">
-            <span class="ci-label">Entité</span>
-            <span class="ci-val">LayLabo · HORS KADR</span>
-          </div>
-          <div class="ci-item">
-            <span class="ci-label">Localisation</span>
-            <span class="ci-val">Antananarivo, Madagasikara</span>
-          </div>
-          <div class="ci-item">
-            <span class="ci-label">Coordonnées GPS</span>
-            <span class="ci-val">-18.8792° S · 47.5079° E</span>
-          </div>
-          <div class="ci-item">
             <span class="ci-label">Email</span>
             <span class="ci-val">laylabo@horskadr.mg</span>
           </div>
           <div class="ci-item">
-            <span class="ci-label">Site parent</span>
-            <span class="ci-val">horskadr.mg</span>
+            <span class="ci-label">Localisation</span>
+            <span class="ci-val">Antananarivo, Madagascar</span>
+          </div>
+          <div class="ci-item">
+            <span class="ci-label">Statut</span>
+            <span class="ci-val" style="display:flex;align-items:center;gap:8px">
+              <span class="dot" style="display:inline-block;width:7px;height:7px"></span>
+              Ouvert aux collaborations
+            </span>
+          </div>
+          <div class="ci-item">
+            <span class="ci-label">Fondé</span>
+            <span class="ci-val">EST. 2025 · ANTANANARIVO</span>
+          </div>
+          <div class="ci-item">
+            <span class="ci-label">Entité parent</span>
+            <span class="ci-val">HORS KADR · horskadr.mg</span>
           </div>
         </div>
       </div>
@@ -591,8 +596,8 @@ import Layout from '../layouts/Layout.astro';
     <div class="wrap">
       <div class="footer-inner">
         <div style="display:flex;align-items:center;gap:12px">
-          <img src="/assets/logo-white.png" alt="HORS KADR" style="height:20px;opacity:.4" />
-          <span class="footer-copy">LayLabo — © 2025 HORS KADR · Tous droits réservés</span>
+          <img src="/assets/logo-white.png" alt="HORS KADR" style="height:22px;opacity:.55" />
+          <span class="footer-copy">LayLabo · HORS KADR — © 2026 · Tous droits réservés · Antananarivo, Madagascar</span>
         </div>
         <a href="https://horskadr.mg" class="footer-back">← horskadr.mg</a>
       </div>
@@ -615,7 +620,7 @@ import Layout from '../layouts/Layout.astro';
     duration: 6, ease: 'sine.inOut', repeat: -1, yoyo: true,
   });
 
-  // ── Floating cards — each floats at its own rhythm ────
+  // ── Floating cards — chaque carte flotte à son rythme ──
   const cards = ['#fc1','#fc2','#fc3','#fc4','#fc5'];
   cards.forEach((id, i) => {
     const el = document.querySelector<HTMLElement>(id);
@@ -628,6 +633,17 @@ import Layout from '../layouts/Layout.astro';
     gsap.to(el, {
       rotate: i % 2 === 0 ? 1.2 : -1,
       duration: 3.5 + i * 0.7,
+      ease: 'sine.inOut', repeat: -1, yoyo: true,
+    });
+  });
+
+  // ── Flèches — pulsent pour indiquer la direction ───────
+  ['#fc-arr1','#fc-arr2'].forEach((id, i) => {
+    const el = document.querySelector<HTMLElement>(id);
+    if (!el) return;
+    gsap.to(el, {
+      x: 6, opacity: .5,
+      duration: 0.9 + i * 0.2,
       ease: 'sine.inOut', repeat: -1, yoyo: true,
     });
   });
