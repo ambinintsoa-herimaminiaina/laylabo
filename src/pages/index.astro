@@ -466,24 +466,102 @@ import Layout from '../layouts/Layout.astro';
           <!-- Cercles radiaux -->
           <div class="m-ring r1"></div>
           <div class="m-ring r2"></div>
-          <div class="m-ring r3"></div>
 
-          <!-- Badge circulaire 1 — tourne sens horaire -->
-          <div class="m-circ-badge mcb-1">
-            <svg viewBox="0 0 160 160" class="mcb-svg">
+          <!-- ★ Grand badge circulaire — "être en bonne santé n'est pas facultatif" -->
+          <div class="m-text-circle">
+            <svg viewBox="0 0 340 340" class="m-text-circle-svg">
               <defs>
-                <path id="mcp1" d="M80,80 m-68,0 a68,68 0 1,1 136,0 a68,68 0 1,1 -136,0"/>
+                <path id="mtc" d="M170,170 m-150,0 a150,150 0 1,1 300,0 a150,150 0 1,1 -300,0"/>
               </defs>
-              <text class="mcb-text">
-                <textPath href="#mcp1">VITA MALAGASY · HORS KADR · LAYLAB · SANTÉ · </textPath>
+              <text class="mtc-text">
+                <textPath href="#mtc">être en bonne santé n'est pas facultatif · être en bonne santé n'est pas facultatif · </textPath>
               </text>
             </svg>
-            <div class="mcb-core">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <div class="mtc-core">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
             </div>
           </div>
 
-          <!-- Badge circulaire 2 — tourne sens anti-horaire -->
+          <!-- ★ Phone réel + map overlay ── -->
+          <div class="marary-phone-wrap">
+            <img src="/assets/phone-mockup.png" alt="MARARY app" class="marary-phone-img" />
+
+            <!-- Map overlay (perspective-matched au téléphone) -->
+            <div class="marary-screen-map">
+
+              <!-- Topbar app -->
+              <div class="msm-bar">
+                <span class="msm-logo-text">▸ MARARY</span>
+                <span class="msm-loc-text">📍 Antananarivo</span>
+              </div>
+
+              <!-- Fond carte -->
+              <div class="msm-mapbg">
+                <!-- Routes SVG -->
+                <svg class="msm-roads" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <line x1="0"  y1="38" x2="100" y2="38" stroke="white" stroke-width="1.2"/>
+                  <line x1="0"  y1="62" x2="100" y2="62" stroke="white" stroke-width=".6"/>
+                  <line x1="28" y1="0"  x2="28"  y2="100" stroke="white" stroke-width=".7"/>
+                  <line x1="62" y1="0"  x2="62"  y2="100" stroke="white" stroke-width="1.2"/>
+                  <line x1="0"  y1="0"  x2="55"  y2="100" stroke="white" stroke-width=".5" opacity=".6"/>
+                  <line x1="45" y1="0"  x2="100" y2="80"  stroke="white" stroke-width=".5" opacity=".6"/>
+                </svg>
+
+                <!-- Zones colorées (quartiers) -->
+                <div class="msm-zone z1"></div>
+                <div class="msm-zone z2"></div>
+
+                <!-- Pin 1 — Hôpital -->
+                <div class="msm-pin" style="top:24%;left:38%">
+                  <div class="msm-pin-bubble">🏥<span>Hôpital</span></div>
+                  <div class="msm-pin-needle"></div>
+                </div>
+
+                <!-- Pin 2 — Pharmacie -->
+                <div class="msm-pin" style="top:50%;left:18%">
+                  <div class="msm-pin-bubble msm-pb-blue">💊<span>Pharmacie</span></div>
+                  <div class="msm-pin-needle msm-pn-blue"></div>
+                </div>
+
+                <!-- Pin 3 — Médecin -->
+                <div class="msm-pin" style="top:35%;left:64%">
+                  <div class="msm-pin-bubble msm-pb-purple">👨‍⚕️<span>Dr. Andriana</span></div>
+                  <div class="msm-pin-needle msm-pn-purple"></div>
+                </div>
+
+                <!-- Pin 4 — Clinique -->
+                <div class="msm-pin" style="top:58%;left:55%">
+                  <div class="msm-pin-bubble">🏪<span>Clinique</span></div>
+                  <div class="msm-pin-needle"></div>
+                </div>
+
+                <!-- Position actuelle (pulse bleu) -->
+                <div class="msm-me" style="top:63%;left:45%">
+                  <div class="msm-me-pulse"></div>
+                  <div class="msm-me-dot"></div>
+                </div>
+              </div>
+
+              <!-- Carte résultat bas -->
+              <div class="msm-result">
+                <div class="msm-result-icon">💊</div>
+                <div class="msm-result-info">
+                  <div class="msm-result-name">Pharmacie Razafimahefa</div>
+                  <div class="msm-result-dist">0.3 km · <span class="msm-open">Ouvert</span></div>
+                </div>
+                <div class="msm-result-nav">→</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Floating stat chip -->
+          <div class="m-stat-chip">
+            <div class="m-stat-num">70%</div>
+            <div class="m-stat-sub">sans soins adaptés</div>
+          </div>
+
+          <!-- Small rotating badge bottom-right -->
           <div class="m-circ-badge mcb-2">
             <svg viewBox="0 0 130 130" class="mcb-svg">
               <defs>
@@ -493,66 +571,7 @@ import Layout from '../layouts/Layout.astro';
                 <textPath href="#mcp2">EN DÉVELOPPEMENT · 2025 · MARARY · </textPath>
               </text>
             </svg>
-            <div class="mcb-core mcb-core--green">
-              <span>🚀</span>
-            </div>
-          </div>
-
-          <!-- Phone mockup -->
-          <div class="marary-phone">
-            <div class="mphone-notch"></div>
-            <div class="mphone-screen">
-
-              <!-- App header -->
-              <div class="mps-header">
-                <div class="mps-logo">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;stroke:var(--green)"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                  <span>MARARY</span>
-                </div>
-                <span class="mps-loc">📍 Antananarivo</span>
-              </div>
-
-              <!-- Search -->
-              <div class="mps-search">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                <span>Trouver un médecin...</span>
-              </div>
-
-              <!-- Section title -->
-              <div class="mps-stitle">Médecins à proximité</div>
-
-              <!-- Doctor 1 -->
-              <div class="mps-doc">
-                <div class="mps-avatar">DR</div>
-                <div class="mps-info">
-                  <div class="mps-dname">Dr. Andriana R.</div>
-                  <div class="mps-dspec">Médecine générale · 0.8km</div>
-                  <div class="mps-dprice">10 000 Ar</div>
-                </div>
-                <span class="mps-avail">Dispo</span>
-              </div>
-
-              <!-- Doctor 2 -->
-              <div class="mps-doc">
-                <div class="mps-avatar" style="background:rgba(13,206,107,.1);color:rgba(13,206,107,.6)">RM</div>
-                <div class="mps-info">
-                  <div class="mps-dname">Dr. Rakoto M.</div>
-                  <div class="mps-dspec">Pédiatrie · 1.2km</div>
-                  <div class="mps-dprice">15 000 Ar</div>
-                </div>
-                <span class="mps-avail mps-wait">+45min</span>
-              </div>
-
-              <!-- CTA -->
-              <div class="mps-cta">Prendre RDV maintenant</div>
-
-            </div>
-          </div>
-
-          <!-- Floating stat chip -->
-          <div class="m-stat-chip">
-            <div class="m-stat-num">70%</div>
-            <div class="m-stat-sub">sans soins adaptés</div>
+            <div class="mcb-core mcb-core--green"><span>🚀</span></div>
           </div>
 
         </div>

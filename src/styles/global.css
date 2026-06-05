@@ -871,7 +871,10 @@ body {
 .mp-stat { font-family: var(--display); font-size: 24px; font-weight: 900; color: var(--green); line-height: 1; }
 .mp-stat span { font-family: var(--mono); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: rgba(244,243,241,.35); display: block; font-weight: 400; margin-top: 3px; }
 
-.marary-visual { position: relative; height: 580px; display: flex; align-items: center; justify-content: center; }
+.marary-visual {
+  position: relative; height: 600px;
+  display: flex; align-items: center; justify-content: center;
+}
 .marary-bg-title {
   position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
   font-family: var(--display); font-size: clamp(80px,16vw,180px);
@@ -880,59 +883,177 @@ body {
   user-select: none; pointer-events: none; z-index: 0;
 }
 .m-ring { position: absolute; border-radius: 50%; border: 1px dashed rgba(13,206,107,.1); pointer-events: none; z-index: 0; }
-.r1 { width: 500px; height: 500px; }
-.r2 { width: 360px; height: 360px; }
-.r3 { width: 220px; height: 220px; border-style: solid; opacity: .5; }
+.r1 { width: 520px; height: 520px; }
+.r2 { width: 370px; height: 370px; }
 
+/* ── Grand circular text badge ── */
+.m-text-circle {
+  position: absolute; z-index: 5;
+  width: 340px; height: 340px;
+  display: flex; align-items: center; justify-content: center;
+  animation: mcw 28s linear infinite;
+}
+.m-text-circle-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.mtc-text {
+  font-family: var(--mono); font-size: 10.5px;
+  letter-spacing: .2em; text-transform: uppercase;
+  fill: rgba(13,206,107,.5);
+}
+.mtc-core {
+  width: 54px; height: 54px; border-radius: 50%;
+  background: rgba(7,16,10,.9);
+  border: 1.5px solid rgba(13,206,107,.4);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1; position: relative;
+  box-shadow: 0 0 24px rgba(13,206,107,.2);
+}
+.mtc-core svg { width: 22px; height: 22px; stroke: var(--green); }
+
+/* ── Phone image + screen overlay ── */
+.marary-phone-wrap {
+  position: relative; z-index: 2;
+  width: 250px;
+  filter: drop-shadow(0 40px 60px rgba(0,0,0,.6)) drop-shadow(0 0 40px rgba(13,206,107,.15));
+}
+.marary-phone-img {
+  width: 100%; display: block;
+  transform: rotate(-2deg);
+}
+
+/* Screen overlay — perspective-matched au tilt du phone */
+.marary-screen-map {
+  position: absolute;
+  top: 8%; left: 19.5%; right: 8%;
+  bottom: 7%;
+  transform: perspective(700px) rotateY(13deg) rotateX(-2deg);
+  transform-origin: 20% 50%;
+  overflow: hidden;
+  border-radius: 7% 6% 6% 7%;
+  display: flex; flex-direction: column;
+  background: #e8f5e9;
+}
+
+/* App top bar */
+.msm-bar {
+  background: rgba(7,16,10,.92);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 6px 10px; flex-shrink: 0;
+}
+.msm-logo-text {
+  font-family: var(--mono); font-size: 8px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .1em; color: var(--green);
+}
+.msm-loc-text { font-family: var(--mono); font-size: 7px; color: rgba(244,243,241,.4); }
+
+/* Map background */
+.msm-mapbg {
+  flex: 1; position: relative; overflow: hidden;
+  background: linear-gradient(145deg, #c8e6c9 0%, #a5d6a7 40%, #81c784 100%);
+}
+.msm-roads {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none;
+}
+
+/* Zone quartier */
+.msm-zone {
+  position: absolute; border-radius: 8px; opacity: .25;
+}
+.z1 { top: 10%; left: 5%; width: 50%; height: 45%; background: #4caf50; }
+.z2 { top: 45%; left: 40%; width: 55%; height: 50%; background: #388e3c; }
+
+/* Pins */
+.msm-pin {
+  position: absolute; display: flex; flex-direction: column; align-items: center;
+  transform: translateX(-50%);
+}
+.msm-pin-bubble {
+  background: var(--green-dark);
+  color: white; font-size: 8px;
+  padding: 2px 5px; border-radius: 6px;
+  white-space: nowrap; display: flex; align-items: center; gap: 3px;
+  font-family: var(--mono); letter-spacing: .04em;
+  box-shadow: 0 2px 6px rgba(0,0,0,.3);
+}
+.msm-pin-bubble span { font-size: 7px; color: rgba(255,255,255,.8); }
+.msm-pb-blue   { background: #1565c0; }
+.msm-pb-purple { background: #6a1b9a; }
+.msm-pin-needle {
+  width: 1.5px; height: 5px; background: var(--green-dark);
+  margin-top: 1px;
+}
+.msm-pn-blue   { background: #1565c0; }
+.msm-pn-purple { background: #6a1b9a; }
+
+/* Position actuelle */
+.msm-me {
+  position: absolute; transform: translate(-50%,-50%);
+  display: flex; align-items: center; justify-content: center;
+}
+.msm-me-pulse {
+  position: absolute;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(33,150,243,.2);
+  animation: me-pulse 2s ease-out infinite;
+}
+@keyframes me-pulse {
+  0%   { transform: scale(1); opacity: .7; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+.msm-me-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #2196f3; border: 1.5px solid white;
+  box-shadow: 0 0 6px rgba(33,150,243,.6);
+  position: relative; z-index: 1;
+}
+
+/* Bottom result card */
+.msm-result {
+  background: rgba(7,16,10,.9);
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 10px; flex-shrink: 0;
+  border-top: 1px solid rgba(13,206,107,.15);
+}
+.msm-result-icon { font-size: 14px; flex-shrink: 0; }
+.msm-result-info { flex: 1; min-width: 0; }
+.msm-result-name {
+  font-family: var(--display); font-size: 9px;
+  font-weight: 700; color: #f4f3f1; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.msm-result-dist {
+  font-family: var(--mono); font-size: 7px;
+  color: rgba(244,243,241,.4); letter-spacing: .04em;
+}
+.msm-open { color: var(--green); }
+.msm-result-nav {
+  font-size: 12px; color: var(--green); flex-shrink: 0; font-weight: 700;
+}
+
+/* Small rotating badge */
 .m-circ-badge { position: absolute; z-index: 4; display: flex; align-items: center; justify-content: center; }
-.mcb-1 { width: 160px; height: 160px; top: 2%; left: 3%; animation: mcw  20s linear infinite; }
-.mcb-2 { width: 130px; height: 130px; bottom: 5%; right: 2%; animation: mccw 15s linear infinite; }
+.mcb-2 { width: 120px; height: 120px; bottom: 4%; right: 0%; animation: mccw 15s linear infinite; }
 @keyframes mcw  { to { transform: rotate(360deg);  } }
 @keyframes mccw { to { transform: rotate(-360deg); } }
 .mcb-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 .mcb-text { font-family: var(--mono); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; fill: rgba(13,206,107,.55); }
 .mcb-core {
-  width: 46px; height: 46px; border-radius: 50%;
+  width: 38px; height: 38px; border-radius: 50%;
   background: rgba(7,16,10,.9); border: 1px solid rgba(13,206,107,.25);
   display: flex; align-items: center; justify-content: center;
   z-index: 1; position: relative;
 }
-.mcb-core svg { width: 18px; height: 18px; stroke: rgba(13,206,107,.7); }
-.mcb-core--green { background: rgba(13,206,107,.12); font-size: 18px; }
-
-.marary-phone {
-  position: relative; z-index: 2; width: 220px;
-  background: rgba(7,16,10,.95);
-  border: 1px solid rgba(13,206,107,.3); border-radius: 36px; padding: 14px;
-  box-shadow: 0 40px 80px rgba(0,0,0,.7), 0 0 60px rgba(13,206,107,.12);
-  transform: rotate(-4deg) translateY(-8px);
-}
-.mphone-notch { width: 56px; height: 5px; border-radius: 3px; background: rgba(13,206,107,.25); margin: 0 auto 12px; }
-.mphone-screen { background: #0a1a0d; border-radius: 24px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
-.mps-header { display: flex; align-items: center; justify-content: space-between; }
-.mps-logo { display: flex; align-items: center; gap: 5px; font-family: var(--mono); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--green); }
-.mps-loc { font-family: var(--mono); font-size: 9px; color: rgba(244,243,241,.35); }
-.mps-search { background: rgba(13,206,107,.07); border: 1px solid rgba(13,206,107,.14); border-radius: 8px; padding: 7px 10px; display: flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 9px; color: rgba(244,243,241,.3); }
-.mps-search svg { width: 11px; height: 11px; stroke: rgba(13,206,107,.4); flex-shrink: 0; }
-.mps-stitle { font-family: var(--mono); font-size: 8px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(244,243,241,.3); }
-.mps-doc { background: rgba(13,206,107,.06); border: 1px solid rgba(13,206,107,.1); border-radius: 10px; padding: 9px; display: flex; align-items: center; gap: 8px; }
-.mps-avatar { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; background: rgba(13,206,107,.22); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 8px; font-weight: 700; color: var(--green); }
-.mps-info { flex: 1; min-width: 0; }
-.mps-dname { font-family: var(--display); font-size: 11px; font-weight: 700; color: #f4f3f1; }
-.mps-dspec { font-family: var(--mono); font-size: 7.5px; color: rgba(244,243,241,.35); }
-.mps-dprice { font-family: var(--mono); font-size: 9px; font-weight: 700; color: var(--green); }
-.mps-avail { flex-shrink: 0; font-family: var(--mono); font-size: 7.5px; font-weight: 700; color: var(--green); background: rgba(13,206,107,.12); border: 1px solid rgba(13,206,107,.2); border-radius: 4px; padding: 3px 6px; letter-spacing: .06em; text-transform: uppercase; }
-.mps-wait { color: rgba(244,243,241,.4); background: rgba(244,243,241,.05); border-color: rgba(244,243,241,.08); }
-.mps-cta { background: var(--green); color: #07100a; font-family: var(--display); font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; border-radius: 7px; padding: 9px; text-align: center; }
+.mcb-core svg { width: 16px; height: 16px; stroke: rgba(13,206,107,.7); }
+.mcb-core--green { background: rgba(13,206,107,.12); font-size: 15px; }
 
 .m-stat-chip {
-  position: absolute; z-index: 3; top: 12%; right: -2%;
-  background: rgba(7,16,10,.9); border: 1px solid rgba(13,206,107,.25);
+  position: absolute; z-index: 6; top: 8%; right: -4%;
+  background: rgba(7,16,10,.92); border: 1px solid rgba(13,206,107,.3);
   border-radius: 14px; padding: 12px 16px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.4); text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,.5); text-align: center;
 }
-.m-stat-num { font-family: var(--display); font-size: 28px; font-weight: 900; color: var(--green); line-height: 1; }
-.m-stat-sub { font-family: var(--mono); font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: rgba(244,243,241,.35); margin-top: 4px; max-width: 80px; }
+.m-stat-num { font-family: var(--display); font-size: 26px; font-weight: 900; color: var(--green); line-height: 1; }
+.m-stat-sub { font-family: var(--mono); font-size: 7.5px; letter-spacing: .1em; text-transform: uppercase; color: rgba(244,243,241,.35); margin-top: 4px; max-width: 76px; }
 
 /* ════════════════════════════════════════════════════════════
    AMBITIONS — fond sombre = contraste inversé (seule section dark)
