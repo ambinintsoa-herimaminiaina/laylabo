@@ -405,9 +405,9 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- ══════════════════════════════════════════════════
-       03 — PROJETS EN COURS
+       03 — PROJETS — MARARY
        ══════════════════════════════════════════════════ -->
-  <section class="sec" id="projets">
+  <section class="sec sec-dark marary-sec" id="projets">
     <div class="wrap">
       <div class="seclabel">
         <span class="idx">03</span>
@@ -416,87 +416,146 @@ import Layout from '../layouts/Layout.astro';
         <span class="fill"></span>
       </div>
 
-      <h2 class="h2-disp reveal">
-        Ce qu'on <span class="accent">lance.</span>
-      </h2>
-      <p class="sec-intro reveal d1">
-        Trois produits phares dans les tuyaux. Chacun répond à un vrai besoin.
-        Chacun est construit avec les mêmes standards qu'une startup tech internationale.
-      </p>
+      <div class="marary-showcase reveal">
 
-      <div class="projets-grid">
+        <!-- ── GAUCHE : texte + problème ── -->
+        <div class="marary-left">
 
-        <!-- Project 1: LayHealth (featured) -->
-        <div class="projet-card featured reveal">
-          <div class="projet-top">
-            <div class="projet-logo">🏥</div>
-            <span class="projet-badge active">
-              <span class="dot" style="width:5px;height:5px"></span>
-              En développement
-            </span>
+          <!-- Badge statut -->
+          <div class="marary-status">
+            <span class="dot"></span>
+            <span>En développement · LayLabo 2025</span>
           </div>
-          <div class="projet-name">LayHealth</div>
-          <div class="projet-tagline">Votre santé, dans votre poche.</div>
-          <p class="projet-desc">
-            La plateforme de santé digitale pensée pour Madagascar. Prenez rendez-vous
-            avec un médecin en 2 minutes. Suivez vos traitements. Consultez à distance.
-            LayHealth rend les soins accessibles à ceux qui en ont le plus besoin —
-            partout sur le territoire, même hors connexion.
+
+          <!-- Nom app -->
+          <h2 class="marary-name">MARARY</h2>
+          <p class="marary-tagline">La santé, enfin à portée de main.</p>
+          <p class="marary-desc">
+            MARARY c'est l'app qui répond à la question que chaque Malagasy se pose :
+            <strong>où consulter, qui, et combien ça coûte ?</strong><br /><br />
+            Localisation des médecins et pharmacies à proximité, tarifs,
+            disponibilité en temps réel, prise de RDV directe.
+            Pour que se soigner ne soit plus un parcours du combattant.
           </p>
-          <div class="projet-stack">
-            <span class="stack-tag">React Native</span>
-            <span class="stack-tag">Node.js</span>
-            <span class="stack-tag">Supabase</span>
-            <span class="stack-tag">Expo</span>
+
+          <!-- Carte problème -->
+          <div class="marary-problem">
+            <div class="mp-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+            </div>
+            <div>
+              <div class="mp-label">Le problème qu'on règle</div>
+              <div class="mp-title">Soins inaccessibles</div>
+              <p class="mp-text">Même savoir où est le médecin le plus proche ou combien ça coûte est impossible sans outil.</p>
+              <div class="mp-stat">70% <span>sans accès à des soins adaptés</span></div>
+            </div>
           </div>
-          <a href="#contact" class="projet-link">Suivre le projet →</a>
+
+          <a href="#contact" class="btn-primary" style="align-self:flex-start;margin-top:8px">Suivre MARARY →</a>
+
         </div>
 
-        <!-- Project 2: LayShop -->
-        <div class="projet-card reveal d1">
-          <div class="projet-top">
-            <div class="projet-logo">🛒</div>
-            <span class="projet-badge active">
-              <span class="dot" style="width:5px;height:5px"></span>
-              En développement
-            </span>
-          </div>
-          <div class="projet-name">LayShop</div>
-          <div class="projet-tagline">Le commerce local, digitalisé.</div>
-          <p class="projet-desc">
-            Une solution e-commerce pensée pour les vendeurs malgaches. Catalogue,
-            commandes, paiement mobile (MVola, Orange Money), livraison locale.
-            Chaque marchand devient une boutique en ligne en moins de 10 minutes.
-          </p>
-          <div class="projet-stack">
-            <span class="stack-tag">React Native</span>
-            <span class="stack-tag">Next.js</span>
-            <span class="stack-tag">Stripe / MVola</span>
-          </div>
-          <a href="#contact" class="projet-link">Suivre le projet →</a>
-        </div>
+        <!-- ── DROITE : visuel Karvon-style ── -->
+        <div class="marary-visual">
 
-        <!-- Project 3: LayMove -->
-        <div class="projet-card reveal d2">
-          <div class="projet-top">
-            <div class="projet-logo">🚗</div>
-            <span class="projet-badge concept">En conception</span>
-          </div>
-          <div class="projet-name">LayMove</div>
-          <div class="projet-tagline">Se déplacer, enfin simplement.</div>
-          <p class="projet-desc">
-            L'app de mobilité urbaine pour Antananarivo et les grandes villes.
-            Infos trafic en temps réel, covoiturage de proximité, calcul d'itinéraires
-            taxi-brousse. Parce que perdre 2h dans les embouteillages, c'est fini.
-          </p>
-          <div class="projet-stack">
-            <span class="stack-tag">Flutter</span>
-            <span class="stack-tag">Maps API</span>
-            <span class="stack-tag">Firebase</span>
-          </div>
-          <span class="projet-link disabled">Bientôt disponible</span>
-        </div>
+          <!-- Ghost background title -->
+          <div class="marary-bg-title" aria-hidden="true">MARARY</div>
 
+          <!-- Cercles radiaux -->
+          <div class="m-ring r1"></div>
+          <div class="m-ring r2"></div>
+          <div class="m-ring r3"></div>
+
+          <!-- Badge circulaire 1 — tourne sens horaire -->
+          <div class="m-circ-badge mcb-1">
+            <svg viewBox="0 0 160 160" class="mcb-svg">
+              <defs>
+                <path id="mcp1" d="M80,80 m-68,0 a68,68 0 1,1 136,0 a68,68 0 1,1 -136,0"/>
+              </defs>
+              <text class="mcb-text">
+                <textPath href="#mcp1">VITA MALAGASY · HORS KADR · LAYLAB · SANTÉ · </textPath>
+              </text>
+            </svg>
+            <div class="mcb-core">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+          </div>
+
+          <!-- Badge circulaire 2 — tourne sens anti-horaire -->
+          <div class="m-circ-badge mcb-2">
+            <svg viewBox="0 0 130 130" class="mcb-svg">
+              <defs>
+                <path id="mcp2" d="M65,65 m-54,0 a54,54 0 1,1 108,0 a54,54 0 1,1 -108,0"/>
+              </defs>
+              <text class="mcb-text">
+                <textPath href="#mcp2">EN DÉVELOPPEMENT · 2025 · MARARY · </textPath>
+              </text>
+            </svg>
+            <div class="mcb-core mcb-core--green">
+              <span>🚀</span>
+            </div>
+          </div>
+
+          <!-- Phone mockup -->
+          <div class="marary-phone">
+            <div class="mphone-notch"></div>
+            <div class="mphone-screen">
+
+              <!-- App header -->
+              <div class="mps-header">
+                <div class="mps-logo">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;stroke:var(--green)"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                  <span>MARARY</span>
+                </div>
+                <span class="mps-loc">📍 Antananarivo</span>
+              </div>
+
+              <!-- Search -->
+              <div class="mps-search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <span>Trouver un médecin...</span>
+              </div>
+
+              <!-- Section title -->
+              <div class="mps-stitle">Médecins à proximité</div>
+
+              <!-- Doctor 1 -->
+              <div class="mps-doc">
+                <div class="mps-avatar">DR</div>
+                <div class="mps-info">
+                  <div class="mps-dname">Dr. Andriana R.</div>
+                  <div class="mps-dspec">Médecine générale · 0.8km</div>
+                  <div class="mps-dprice">10 000 Ar</div>
+                </div>
+                <span class="mps-avail">Dispo</span>
+              </div>
+
+              <!-- Doctor 2 -->
+              <div class="mps-doc">
+                <div class="mps-avatar" style="background:rgba(13,206,107,.1);color:rgba(13,206,107,.6)">RM</div>
+                <div class="mps-info">
+                  <div class="mps-dname">Dr. Rakoto M.</div>
+                  <div class="mps-dspec">Pédiatrie · 1.2km</div>
+                  <div class="mps-dprice">15 000 Ar</div>
+                </div>
+                <span class="mps-avail mps-wait">+45min</span>
+              </div>
+
+              <!-- CTA -->
+              <div class="mps-cta">Prendre RDV maintenant</div>
+
+            </div>
+          </div>
+
+          <!-- Floating stat chip -->
+          <div class="m-stat-chip">
+            <div class="m-stat-num">70%</div>
+            <div class="m-stat-sub">sans soins adaptés</div>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
