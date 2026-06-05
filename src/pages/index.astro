@@ -329,20 +329,84 @@ import Layout from '../layouts/Layout.astro';
         <div class="solutions-body reveal d1">
           <p>
             On ne fait pas des apps pour faire des apps. Chaque produit LayLabo
-            part d'un problème réel, vécu par des gens réels — et on construit
-            la solution la plus directe possible.
+            part d'un <strong>problème réel</strong>, vécu par des <strong>gens réels</strong> —
+            et on construit la <strong>solution la plus directe</strong> possible.
           </p>
           <p>
-            Conçu à Antananarivo. Pensé pour le marché malgache.
-            Construit pour durer.
+            Conçu à <strong>Antananarivo</strong>. Pensé pour le <strong>marché malgache</strong>.
+            Construit pour <strong>durer</strong>.
           </p>
         </div>
+      </div>
+
+      <!-- ── Infographie process timeline ── -->
+      <div class="process-timeline reveal">
+
+        <div class="process-step">
+          <div class="process-node">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <div class="process-connector"></div>
+          <div class="process-content">
+            <div class="process-num">01</div>
+            <h4 class="process-title">Observer · Analyser · Écouter</h4>
+            <p class="process-desc">On part du terrain, pas d'une idée abstraite. On écoute les vrais utilisateurs avant de toucher au code.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="process-node">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <div class="process-connector"></div>
+          <div class="process-content">
+            <div class="process-num">02</div>
+            <h4 class="process-title">MVP interne & Tests</h4>
+            <p class="process-desc">On construit vite, on teste vrai. On rate parfois — et c'est là qu'on apprend l'essentiel.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="process-node">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/>
+            </svg>
+          </div>
+          <div class="process-connector"></div>
+          <div class="process-content">
+            <div class="process-num">03</div>
+            <h4 class="process-title">Itérer & Améliorer</h4>
+            <p class="process-desc">Ce que les utilisateurs nous disent compte plus que tout. Chaque retour devient une amélioration concrète.</p>
+          </div>
+        </div>
+
+        <div class="process-step process-step--last">
+          <div class="process-node process-node--active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/>
+            </svg>
+          </div>
+          <div class="process-content">
+            <div class="process-num process-num--active">04</div>
+            <h4 class="process-title">Déployer</h4>
+            <p class="process-desc">Pour le maximum d'impact, pour le plus grand nombre. Vita Malagasy, déployé pour les Malagasy.</p>
+          </div>
+        </div>
+
       </div>
 
       <div class="solutions-grid">
 
         <div class="solution-card reveal">
-          <div class="solution-icon">🏥</div>
+          <div class="solution-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </div>
           <div class="solution-app">LayHealth</div>
           <h3 class="solution-title">Santé digitale</h3>
           <p class="solution-desc">
@@ -353,7 +417,11 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div class="solution-card reveal d1">
-          <div class="solution-icon">📚</div>
+          <div class="solution-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+            </svg>
+          </div>
           <div class="solution-app">LayLearn</div>
           <h3 class="solution-title">Éducation accessible</h3>
           <p class="solution-desc">
@@ -364,7 +432,11 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div class="solution-card reveal d2">
-          <div class="solution-icon">🚗</div>
+          <div class="solution-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+            </svg>
+          </div>
           <div class="solution-app">LayMove</div>
           <h3 class="solution-title">Mobilité urbaine</h3>
           <p class="solution-desc">
@@ -375,7 +447,11 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div class="solution-card reveal">
-          <div class="solution-icon">🛒</div>
+          <div class="solution-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+            </svg>
+          </div>
           <div class="solution-app">LayShop</div>
           <h3 class="solution-title">Commerce local</h3>
           <p class="solution-desc">
@@ -386,7 +462,11 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div class="solution-card reveal d1">
-          <div class="solution-icon">💧</div>
+          <div class="solution-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/>
+            </svg>
+          </div>
           <div class="solution-app">LayClean</div>
           <h3 class="solution-title">Hygiène & bien-être</h3>
           <p class="solution-desc">
@@ -397,7 +477,11 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div class="solution-card reveal d2">
-          <div class="solution-icon">💼</div>
+          <div class="solution-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
+            </svg>
+          </div>
           <div class="solution-app">LayWork</div>
           <h3 class="solution-title">Emploi & talents</h3>
           <p class="solution-desc">
