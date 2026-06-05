@@ -401,8 +401,8 @@ body {
 .b2 { top:  7%;    right: 10%;  transform: rotate(5deg);   z-index: 4;  } /* devant haut-D   */
 .b3 { top:  38%;   left:  16%;  transform: rotate(-4deg);  z-index: 4;  } /* devant milieu-G */
 .b4 { top:  36%;   right: 13%;  transform: rotate(7deg);   z-index: 1;  } /* derrière mil-D  */
-.b5 { bottom: 26%; left:  10%;  transform: rotate(3deg);   z-index: 4;  } /* devant bas-G    */
-.b6 { bottom: 22%; right: 9%;   transform: rotate(-6deg);  z-index: 1;  } /* derrière bas-D  */
+.b5 { bottom: 34%; left:  14%;  transform: rotate(3deg);   z-index: 4;  } /* devant bas-G    */
+.b6 { bottom: 31%; right: 12%;  transform: rotate(-6deg);  z-index: 1;  } /* derrière bas-D  */
 .b7 { top:  22%;   left:  25%;  transform: rotate(4deg);   z-index: 4;  display: none; }
 .b8 { top:  21%;   right: 23%;  transform: rotate(-3deg);  z-index: 1;  display: none; }
 
