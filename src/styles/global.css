@@ -872,7 +872,7 @@ body {
 .mp-stat span { font-family: var(--mono); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: rgba(244,243,241,.35); display: block; font-weight: 400; margin-top: 3px; }
 
 .marary-visual {
-  position: relative; height: 660px;
+  position: relative; height: 720px;
   display: flex; align-items: center; justify-content: center;
 }
 .marary-bg-title {
@@ -912,7 +912,8 @@ body {
 /* ── Phone image + map derrière (mix-blend-mode: multiply) ── */
 .marary-phone-wrap {
   position: relative; z-index: 2;
-  width: 380px;   /* aggrandi */
+  width: 520px;
+  overflow: hidden;   /* ← empêche la map de déborder hors du téléphone */
 }
 /* L'image est AU DESSUS (z:2), fond blanc → transparent grâce à multiply */
 .marary-phone-img {
@@ -923,10 +924,9 @@ body {
 /* La map est DERRIÈRE l'image (z:1), visible dans la zone écran */
 .marary-screen-map {
   position: absolute;
-  /* Calibré sur le phone-mockup.png (perspective tilt ~15° Y) */
-  top: 6.5%; left: 17%; right: 4.5%; bottom: 5%;
+  top: 6.5%; left: 17%; right: 5%; bottom: 5%;
   z-index: 1;
-  transform: perspective(700px) rotateY(15deg) rotateX(-2.5deg);
+  transform: perspective(900px) rotateY(15deg) rotateX(-2.5deg);
   transform-origin: 12% 50%;
   overflow: hidden;
   border-radius: 5% 4.5% 4.5% 5%;
