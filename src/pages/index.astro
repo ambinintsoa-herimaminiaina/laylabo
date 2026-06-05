@@ -32,91 +32,83 @@ import Layout from '../layouts/Layout.astro';
     <div class="hero-blob-2"></div>
 
     <!-- ✦ star decos -->
-    <span class="star" style="top:22%;left:22%;font-size:18px" id="star1">✦</span>
-    <span class="star" style="top:70%;left:18%;font-size:12px" id="star2">✦</span>
-    <span class="star" style="top:30%;right:22%;font-size:10px" id="star3">✦</span>
-    <span class="star" style="bottom:22%;right:18%;font-size:16px" id="star4">✦</span>
+    <span class="star" style="top:22%;left:22%;font-size:16px" id="star1">✦</span>
+    <span class="star" style="top:68%;left:20%;font-size:11px" id="star2">✦</span>
+    <span class="star" style="top:28%;right:22%;font-size:10px" id="star3">✦</span>
+    <span class="star" style="bottom:20%;right:20%;font-size:14px" id="star4">✦</span>
 
-    <!-- ── Paire 1 : Santé ─────────────────────────── -->
-    <!-- Problème — top left -->
-    <div class="hfc hfc-tl hfc-prob" id="fc1">
-      <div class="hfc-pair-tag hfc-tag-prob">Problème</div>
-      <div class="hfc-pair-icon">🏥</div>
-      <div class="hfc-pair-title">Pas de médecin disponible</div>
-      <div class="hfc-pair-sub">3 semaines d'attente minimum</div>
+    <!-- ══ Bulles flottantes — uniformes, problème → solution ══ -->
+
+    <!-- 1 · Santé / médecin -->
+    <div class="bubble b1" id="b1">
+      <div class="bubble-prob"><span class="bdot bdot-red"></span>Pas de médecin disponible aux alentours</div>
+      <div class="bubble-sol"><span class="bdot bdot-green"></span>Liste des médecins accessibles sans réservation</div>
     </div>
 
-    <!-- Flèche 1 -->
-    <div class="hfc-arrow hfc-arrow-1" id="fc-arr1">→</div>
-
-    <!-- Solution — top right -->
-    <div class="hfc hfc-tr hfc-sol" id="fc2">
-      <div class="hfc-pair-tag hfc-tag-sol">Solution</div>
-      <div class="hfc-sol-app-name">LayHealth</div>
-      <div class="hfc-pair-title">RDV médical en 2 min</div>
-      <div class="hfc-sol-check">
-        <span class="hfc-check-dot"></span>
-        Consulté aujourd'hui ✓
-      </div>
+    <!-- 2 · Courses / livraison -->
+    <div class="bubble b2" id="b2">
+      <div class="bubble-prob"><span class="bdot bdot-red"></span>Férié, où faire ses courses ?</div>
+      <div class="bubble-sol"><span class="bdot bdot-green"></span>Ce sera livré dans 20 min 🛵</div>
     </div>
 
-    <!-- ── Paire 2 : Commerce ──────────────────────── -->
-    <!-- Problème — bottom left -->
-    <div class="hfc hfc-bl hfc-prob" id="fc3">
-      <div class="hfc-pair-tag hfc-tag-prob">Problème</div>
-      <div class="hfc-pair-icon">🛒</div>
-      <div class="hfc-pair-title">Commerce invisible en ligne</div>
-      <div class="hfc-pair-sub">Pas de caisse. Pas de clients.</div>
+    <!-- 3 · Transport / bus -->
+    <div class="bubble b3" id="b3">
+      <div class="bubble-prob"><span class="bdot bdot-red"></span>Plus de bus ? Il a fait demi-tour ?</div>
+      <div class="bubble-sol"><span class="bdot bdot-green"></span>Votre bus dans 13 min 🚌</div>
     </div>
 
-    <!-- Flèche 2 -->
-    <div class="hfc-arrow hfc-arrow-2" id="fc-arr2">→</div>
-
-    <!-- Solution — bottom right -->
-    <div class="hfc hfc-br hfc-sol" id="fc4">
-      <div class="hfc-pair-tag hfc-tag-sol">Solution</div>
-      <div class="hfc-sol-app-name">LayShop</div>
-      <div class="hfc-pair-title">Boutique en ligne en 10 min</div>
-      <div class="hfc-sol-check">
-        <span class="hfc-check-dot"></span>
-        12 commandes ce mois ✓
-      </div>
+    <!-- 4 · Urgence / ambulance -->
+    <div class="bubble b4" id="b4">
+      <div class="bubble-prob"><span class="bdot bdot-red"></span>Il fait nuit, pas moyen d'aller à l'hôpital</div>
+      <div class="bubble-sol"><span class="bdot bdot-green"></span>L'ambulance privée arrive dans 7 min 🚑</div>
     </div>
 
-    <!-- Badge Made in Mada — centré bas -->
-    <div class="hfc hfc-mid" id="fc5">
-      <div class="hfc-appt-label">HORS KADR Digital Lab</div>
-      <div class="hfc-appt-name">LayLabo</div>
-      <div class="hfc-chips">
-        <span class="hfc-chip">SaaS</span>
-        <span class="hfc-chip">Apps mobiles</span>
-        <span class="hfc-chip">🇲🇬</span>
-      </div>
-      <div class="hfc-time">Made in Madagasikara</div>
+    <!-- 5 · Lifestyle / rooftop -->
+    <div class="bubble b5" id="b5">
+      <div class="bubble-prob"><span class="bdot bdot-red"></span>Où sont les beaux spots ici ?</div>
+      <div class="bubble-sol"><span class="bdot bdot-green"></span>Selon 7K avis, c'est dans ce rooftop ✨</div>
+    </div>
+
+    <!-- 6 · Embouteillage -->
+    <div class="bubble b6" id="b6">
+      <div class="bubble-prob"><span class="bdot bdot-red"></span>Peur d'arriver en retard à un RDV</div>
+      <div class="bubble-sol"><span class="bdot bdot-green"></span>⚠️ Embouteillage 2h29 · Ankorondrano → Analakely</div>
+    </div>
+
+    <!-- 7 · Hôtel last minute (écrans larges) -->
+    <div class="bubble b7" id="b7">
+      <div class="bubble-prob"><span class="bdot bdot-red"></span>L'hôtel encore non rempli en ce dernier moment ?</div>
+      <div class="bubble-sol"><span class="bdot bdot-green"></span>Chez eux à 5 min à pied de l'océan 🌊</div>
+    </div>
+
+    <!-- 8 · Petite main / linge (écrans larges) -->
+    <div class="bubble b8" id="b8">
+      <div class="bubble-prob"><span class="bdot bdot-red"></span>Qui lave nos linges dans ce quartier ?</div>
+      <div class="bubble-sol"><span class="bdot bdot-green"></span>3 personnes ont postulé 🙌</div>
     </div>
 
     <!-- ── Central content ── -->
     <div class="hero-center">
       <div class="hero-eyebrow reveal">
         <span class="dot"></span>
-        <span>Labo digital · Madagasikara</span>
+        <span>LayLabo — Le mouton noir de l'innovation malagasy</span>
       </div>
 
       <h1 class="hero-title reveal d1">
-        Des SaaS.<br />
-        <span class="ht-ghost">des apps mobiles</span>
-        Pour résoudre<br />
-        <span class="accent">le quotidien.</span>
+        Les solutions<br />
+        <span class="ht-ghost">digitales</span>
+        à portée<br />
+        <span class="accent">de main.</span>
       </h1>
 
       <p class="hero-sub reveal d2">
-        LayLabo conçoit des <b>produits digitaux utiles</b> — pensés pour les Malagasy,
-        construits à Antananarivo. Chaque app répond à un vrai problème de tous les jours.
+        LayLabo conçoit des <b>produits digitaux utiles</b> et pensés pour les Malagasy.
+        Chaque app répond à un vrai problème de tous les jours.
       </p>
 
       <div class="hero-cta reveal d3">
         <a href="#projets" class="btn-primary">Voir nos projets →</a>
-        <a href="#contact" class="btn-ghost">Travailler avec nous</a>
+        <a href="#contact" class="btn-ghost">Devenir partenaire</a>
       </div>
     </div>
   </header>
@@ -620,30 +612,18 @@ import Layout from '../layouts/Layout.astro';
     duration: 6, ease: 'sine.inOut', repeat: -1, yoyo: true,
   });
 
-  // ── Floating cards — chaque carte flotte à son rythme ──
-  const cards = ['#fc1','#fc2','#fc3','#fc4','#fc5'];
-  cards.forEach((id, i) => {
-    const el = document.querySelector<HTMLElement>(id);
-    if (!el) return;
+  // ── Bulles flottantes — chacune à son propre rythme ────
+  document.querySelectorAll<HTMLElement>('.bubble').forEach((el, i) => {
+    // flottement vertical
     gsap.to(el, {
-      y: i % 2 === 0 ? -14 : 10,
-      duration: 2.8 + i * 0.55,
+      y: i % 2 === 0 ? -12 : 9,
+      duration: 2.6 + i * 0.45,
       ease: 'sine.inOut', repeat: -1, yoyo: true,
     });
+    // légère rotation oscillante (±0.8deg)
     gsap.to(el, {
-      rotate: i % 2 === 0 ? 1.2 : -1,
-      duration: 3.5 + i * 0.7,
-      ease: 'sine.inOut', repeat: -1, yoyo: true,
-    });
-  });
-
-  // ── Flèches — pulsent pour indiquer la direction ───────
-  ['#fc-arr1','#fc-arr2'].forEach((id, i) => {
-    const el = document.querySelector<HTMLElement>(id);
-    if (!el) return;
-    gsap.to(el, {
-      x: 6, opacity: .5,
-      duration: 0.9 + i * 0.2,
+      rotate: `+=${i % 2 === 0 ? 0.8 : -0.8}`,
+      duration: 3.2 + i * 0.6,
       ease: 'sine.inOut', repeat: -1, yoyo: true,
     });
   });
