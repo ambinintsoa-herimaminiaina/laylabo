@@ -339,64 +339,66 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
-      <!-- ── Infographie process timeline ── -->
-      <div class="process-timeline reveal">
+      <!-- ── Process WOVE style ── -->
+      <div class="wove-wrap">
 
-        <div class="process-step">
-          <div class="process-node">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
+        <!-- Arc décoratif SVG -->
+        <svg class="wove-bg-arc" viewBox="0 0 500 800" fill="none" aria-hidden="true">
+          <circle cx="-60" cy="400" r="340" stroke="rgba(13,206,107,0.1)" stroke-width="1"/>
+          <circle cx="-60" cy="400" r="240" stroke="rgba(13,206,107,0.06)" stroke-width="1" stroke-dasharray="3 9"/>
+        </svg>
+
+        <div class="wove-steps">
+
+          <div class="wove-step" id="ws1">
+            <div class="ws-track">
+              <span class="ws-dot"></span>
+            </div>
+            <div class="ws-body">
+              <div class="ws-num-bg" aria-hidden="true">01</div>
+              <span class="ws-label">01</span>
+              <h4 class="ws-title">Observer · Analyser · Écouter</h4>
+              <p class="ws-desc">On part du terrain, pas d'une idée abstraite. On écoute les vrais utilisateurs avant de toucher au code.</p>
+            </div>
           </div>
-          <div class="process-connector"></div>
-          <div class="process-content">
-            <div class="process-num">01</div>
-            <h4 class="process-title">Observer · Analyser · Écouter</h4>
-            <p class="process-desc">On part du terrain, pas d'une idée abstraite. On écoute les vrais utilisateurs avant de toucher au code.</p>
+
+          <div class="wove-step" id="ws2">
+            <div class="ws-track">
+              <span class="ws-dot"></span>
+            </div>
+            <div class="ws-body">
+              <div class="ws-num-bg" aria-hidden="true">02</div>
+              <span class="ws-label">02</span>
+              <h4 class="ws-title">MVP interne & Tests</h4>
+              <p class="ws-desc">On construit vite, on teste vrai. On rate parfois — et c'est là qu'on apprend l'essentiel.</p>
+            </div>
           </div>
+
+          <div class="wove-step" id="ws3">
+            <div class="ws-track">
+              <span class="ws-dot"></span>
+            </div>
+            <div class="ws-body">
+              <div class="ws-num-bg" aria-hidden="true">03</div>
+              <span class="ws-label">03</span>
+              <h4 class="ws-title">Itérer & Améliorer</h4>
+              <p class="ws-desc">Ce que les utilisateurs nous disent compte plus que tout. Chaque retour devient une amélioration concrète.</p>
+            </div>
+          </div>
+
+          <div class="wove-step wove-step--last" id="ws4">
+            <div class="ws-track ws-track--last">
+              <span class="ws-dot"></span>
+            </div>
+            <div class="ws-body">
+              <div class="ws-num-bg" aria-hidden="true">04</div>
+              <span class="ws-label">04</span>
+              <h4 class="ws-title">Déployer pour l'impact</h4>
+              <p class="ws-desc">Pour le maximum d'impact, pour le plus grand nombre. Vita Malagasy, déployé pour les Malagasy.</p>
+            </div>
+          </div>
+
         </div>
-
-        <div class="process-step">
-          <div class="process-node">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-            </svg>
-          </div>
-          <div class="process-connector"></div>
-          <div class="process-content">
-            <div class="process-num">02</div>
-            <h4 class="process-title">MVP interne & Tests</h4>
-            <p class="process-desc">On construit vite, on teste vrai. On rate parfois — et c'est là qu'on apprend l'essentiel.</p>
-          </div>
-        </div>
-
-        <div class="process-step">
-          <div class="process-node">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/>
-            </svg>
-          </div>
-          <div class="process-connector"></div>
-          <div class="process-content">
-            <div class="process-num">03</div>
-            <h4 class="process-title">Itérer & Améliorer</h4>
-            <p class="process-desc">Ce que les utilisateurs nous disent compte plus que tout. Chaque retour devient une amélioration concrète.</p>
-          </div>
-        </div>
-
-        <div class="process-step process-step--last">
-          <div class="process-node process-node--active">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/>
-            </svg>
-          </div>
-          <div class="process-content">
-            <div class="process-num process-num--active">04</div>
-            <h4 class="process-title">Déployer</h4>
-            <p class="process-desc">Pour le maximum d'impact, pour le plus grand nombre. Vita Malagasy, déployé pour les Malagasy.</p>
-          </div>
-        </div>
-
       </div>
 
       <div class="solutions-grid">
@@ -761,6 +763,24 @@ import Layout from '../layouts/Layout.astro';
       rotation: 360, duration: 9 + i * 2.5,
       ease: 'none', repeat: -1,
     });
+  });
+
+  // ── WOVE process steps — activation au scroll ─────────
+  document.querySelectorAll<HTMLElement>('.wove-step').forEach((step) => {
+    ScrollTrigger.create({
+      trigger: step,
+      start: 'top 68%',
+      onEnter: () => step.classList.add('ws-active'),
+      onEnterBack: () => step.classList.add('ws-active'),
+      onLeaveBack: () => step.classList.remove('ws-active'),
+    });
+    // Ghost number glisse depuis la droite
+    gsap.fromTo(
+      step.querySelector('.ws-num-bg'),
+      { x: 40, opacity: 0 },
+      { x: 0, opacity: 1, duration: 0.9, ease: 'power3.out',
+        scrollTrigger: { trigger: step, start: 'top 72%', once: true } }
+    );
   });
 
   // ── Ambition numbers count up on scroll ───────────────
