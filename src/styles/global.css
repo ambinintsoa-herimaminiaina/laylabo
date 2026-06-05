@@ -172,7 +172,7 @@ body {
   box-shadow: 0 1px 24px rgba(11,22,13,.06);
 }
 .nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; flex-shrink:0; }
-.nav-logo img { height:28px; display:block; filter: invert(1); }
+.nav-logo img { height:28px; display:block; }
 .nav-logo-sep { width:1px; height:20px; background: rgba(11,22,13,.2); margin: 0 4px; }
 .nav-logo-sub {
   font-family: var(--mono); font-size:11px; font-weight:700;
@@ -395,15 +395,15 @@ body {
 .bdot-red   { background: #ef4444; }
 .bdot-green { background: var(--green); animation: pulse-dot 1.4s ease-in-out infinite; }
 
-/* Positions + rotations initiales */
-.b1 { top:  8%;    left:  1.5%; transform: rotate(-2deg);   }
-.b2 { top:  7%;    right: 1.5%; transform: rotate(2.5deg);  }
-.b3 { top:  41%;   left:  1.5%; transform: rotate(-1.5deg); }
-.b4 { top:  40%;   right: 1.5%; transform: rotate(1deg);    }
-.b5 { bottom: 22%; left:  1.5%; transform: rotate(2deg);    }
-.b6 { bottom: 20%; right: 1.5%; transform: rotate(-2.5deg); }
-.b7 { top:  23%;   left:  1%;   transform: rotate(1.5deg);  display: none; }
-.b8 { top:  23%;   right: 1%;   transform: rotate(-1deg);   display: none; }
+/* Positions + rotations initiales — bulles vers le centre, z:3 passe au dessus du texte */
+.b1 { top:  8%;    left:  7%;   transform: rotate(-2deg);   }
+.b2 { top:  7%;    right: 7%;   transform: rotate(2.5deg);  }
+.b3 { top:  42%;   left:  5%;   transform: rotate(-1.5deg); }
+.b4 { top:  40%;   right: 5%;   transform: rotate(1deg);    }
+.b5 { bottom: 22%; left:  7%;   transform: rotate(2deg);    }
+.b6 { bottom: 20%; right: 7%;   transform: rotate(-2.5deg); }
+.b7 { top:  24%;   left:  14%;  transform: rotate(1.5deg);  display: none; }
+.b8 { top:  23%;   right: 14%;  transform: rotate(-1deg);   display: none; }
 
 /* Afficher b7/b8 sur très grands écrans */
 @media (min-width: 1600px) { .b7, .b8 { display: block; } }
