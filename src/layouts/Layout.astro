@@ -72,11 +72,6 @@ const {
         },
       });
 
-      const track = document.querySelector<HTMLElement>('.marquee .track');
-      if (track) {
-        gsap.to(track, { x: '-50%', duration: 25, ease: 'none', repeat: -1 });
-      }
-
       const nav = document.getElementById('ll-nav');
       if (nav) {
         const onScroll = () => nav.classList.toggle('solid', window.scrollY > 40);
