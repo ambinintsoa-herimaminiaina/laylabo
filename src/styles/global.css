@@ -909,29 +909,34 @@ body {
 }
 .mtc-core svg { width: 22px; height: 22px; stroke: var(--green); }
 
-/* ── Phone image + map derrière ── */
-/* clip-path sur phone-WRAP = silhouette du téléphone → clip tout y compris fond blanc PNG */
+/* ── Phone image + map EN AVANT (approche inversée) ──────────
+   Logique :
+   - phone image : z-index 1 + mix-blend-mode:multiply
+     → fond blanc PNG × fond sombre section = transparent ✓
+     → cadre noir × fond sombre = noir visible ✓
+     → écran blanc × fond sombre = sombre (mais couvert par le map) ✓
+   - screen-map : z-index 2 (AU DESSUS de l'image), positionné sur la zone écran
+     → couvre l'écran du téléphone avec la map ✓
+     → ne peut PAS déborder car overflow:hidden + dimensions fixées ✓
+   ─────────────────────────────────────────────────────────── */
 .marary-phone-wrap {
   position: relative; z-index: 2;
   width: 520px;
-  /* Trapèze = silhouette du corps du téléphone dans phone-mockup.png (~15° tilt Y) */
-  clip-path: polygon(15% 4%, 90% 13%, 88% 97%, 16% 92%);
 }
-/* Image du téléphone : fond blanc de l'image → déjà clippé par le polygon ci-dessus */
 .marary-phone-img {
   width: 100%; display: block;
-  position: relative; z-index: 2;
-  mix-blend-mode: multiply;
-  /* blanc(écran) × map = map ✓  |  noir(cadre) × fond = noir ✓  |  blanc(bg) → déjà clippé */
+  position: relative; z-index: 1;
+  mix-blend-mode: multiply; /* fond blanc PNG → transparent */
 }
-/* Map derrière l'image : visible à travers le blanc de l'écran */
 .marary-screen-map {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 1;
+  /* Zone écran du phone-mockup.png (perspective ~15°Y) */
+  top: 9.5%; left: 20.5%; right: 8%; bottom: 8%;
+  z-index: 2;           /* AU DESSUS du phone image */
+  overflow: hidden;
+  border-radius: 22px 18px 18px 22px;
   background: #f2ead3;
   display: flex; flex-direction: column;
-  overflow: hidden;
 }
 /* App bar MARARY (haut de la map) */
 .msm-appbar {
