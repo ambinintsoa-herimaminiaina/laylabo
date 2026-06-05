@@ -30,10 +30,10 @@ jobs:
           set ftp:prefer-epsv false
           set ftp:use-feat false
           set ftp:nop-interval 10
-          set net:timeout 120
-          set net:max-retries 8
-          set net:reconnect-interval-base 10
+          set net:timeout 30
+          set net:max-retries 4
+          set net:reconnect-interval-base 5
           set net:reconnect-interval-multiplier 1
-          mirror --reverse --delete --verbose --ignore-time ./dist/ /
+          mirror --reverse --verbose --ignore-time ./dist/ /
           quit
           EOF
