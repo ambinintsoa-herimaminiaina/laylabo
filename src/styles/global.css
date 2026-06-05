@@ -909,126 +909,174 @@ body {
 }
 .mtc-core svg { width: 22px; height: 22px; stroke: var(--green); }
 
-/* ── Phone image + screen overlay ── */
-.marary-phone-wrap {
+/* ── CSS iPhone 14 Pro (map Berlin style) ── */
+.mk-phone {
   position: relative; z-index: 2;
-  width: 250px; height: 500px;        /* hauteur fixe même si l'image ne charge pas */
-  filter: drop-shadow(0 40px 60px rgba(0,0,0,.6)) drop-shadow(0 0 40px rgba(13,206,107,.15));
+  width: 270px;
+  background: linear-gradient(170deg, #2a2a2c 0%, #1a1a1c 100%);
+  border-radius: 52px;
+  padding: 14px 12px 12px;
+  box-shadow:
+    0 0 0 1.5px #3a3a3c,
+    0 0 0 3px #111,
+    0 40px 80px rgba(0,0,0,.8),
+    0 0 60px rgba(13,206,107,.1);
 }
-.marary-phone-img {
-  width: 100%; height: 100%;
-  display: block; object-fit: contain;
-  transform: rotate(-2deg);
-}
-
-/* Screen overlay — perspective-matched au tilt du phone */
-.marary-screen-map {
+/* Boutons latéraux */
+.mk-btn-vol, .mk-btn-pwr {
   position: absolute;
-  top: 8%; left: 19.5%; right: 8%;
-  bottom: 7%;
-  transform: perspective(700px) rotateY(13deg) rotateX(-2deg);
-  transform-origin: 20% 50%;
-  overflow: hidden;
-  border-radius: 7% 6% 6% 7%;
+  background: #2c2c2e; border-radius: 2px;
+}
+.mk-btn-vol {
+  left: -3px; top: 110px; width: 3px; height: 44px;
+  box-shadow: 0 36px 0 #2c2c2e;
+}
+.mk-btn-pwr { right: -3px; top: 140px; width: 3px; height: 70px; }
+
+/* Dynamic Island */
+.mk-island {
+  width: 118px; height: 34px; border-radius: 18px;
+  background: #000; margin: 0 auto 8px;
+}
+
+/* Screen container */
+.mk-screen {
+  background: #fff; border-radius: 40px;
+  overflow: hidden; height: 510px;
   display: flex; flex-direction: column;
-  background: #e8f5e9;
 }
 
-/* App top bar */
-.msm-bar {
-  background: rgba(7,16,10,.92);
+/* Status bar */
+.mk-status {
+  background: #fff; padding: 10px 18px 6px;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 6px 10px; flex-shrink: 0;
+  flex-shrink: 0;
 }
-.msm-logo-text {
-  font-family: var(--mono); font-size: 8px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: .1em; color: var(--green);
-}
-.msm-loc-text { font-family: var(--mono); font-size: 7px; color: rgba(244,243,241,.4); }
+.mk-time { font-size: 13px; font-weight: 700; color: #000; font-family: var(--display); }
+.mk-status-icons { display: flex; align-items: center; gap: 5px; }
+.mk-status-icons svg { width: 16px; height: 12px; color: #000; }
 
-/* Map background */
-.msm-mapbg {
-  flex: 1; position: relative; overflow: hidden;
-  background: linear-gradient(145deg, #c8e6c9 0%, #a5d6a7 40%, #81c784 100%);
+/* App bar */
+.mk-appbar {
+  background: rgba(7,16,10,.94); padding: 8px 16px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-shrink: 0;
 }
-.msm-roads {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  pointer-events: none;
+.mk-applabel {
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--mono); font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .12em; color: var(--green);
 }
-
-/* Zone quartier */
-.msm-zone {
-  position: absolute; border-radius: 8px; opacity: .25;
-}
-.z1 { top: 10%; left: 5%; width: 50%; height: 45%; background: #4caf50; }
-.z2 { top: 45%; left: 40%; width: 55%; height: 50%; background: #388e3c; }
-
-/* Pins */
-.msm-pin {
-  position: absolute; display: flex; flex-direction: column; align-items: center;
-  transform: translateX(-50%);
-}
-.msm-pin-bubble {
-  background: var(--green-dark);
-  color: white; font-size: 8px;
-  padding: 2px 5px; border-radius: 6px;
-  white-space: nowrap; display: flex; align-items: center; gap: 3px;
-  font-family: var(--mono); letter-spacing: .04em;
-  box-shadow: 0 2px 6px rgba(0,0,0,.3);
-}
-.msm-pin-bubble span { font-size: 7px; color: rgba(255,255,255,.8); }
-.msm-pb-blue   { background: #1565c0; }
-.msm-pb-purple { background: #6a1b9a; }
-.msm-pin-needle {
-  width: 1.5px; height: 5px; background: var(--green-dark);
-  margin-top: 1px;
-}
-.msm-pn-blue   { background: #1565c0; }
-.msm-pn-purple { background: #6a1b9a; }
-
-/* Position actuelle */
-.msm-me {
-  position: absolute; transform: translate(-50%,-50%);
+.mk-compass {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15);
   display: flex; align-items: center; justify-content: center;
 }
-.msm-me-pulse {
+.mk-compass svg { width: 16px; height: 16px; stroke: #fff; color: #ef5350; }
+
+/* MAP AREA */
+.mk-map {
+  flex: 1; position: relative; overflow: hidden;
+  background: #f2ead3; /* Google Maps beige */
+}
+.mk-roads {
+  position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;
+}
+/* Parcs verts */
+.mk-park {
   position: absolute;
-  width: 20px; height: 20px; border-radius: 50%;
+  background: #aed581; /* vert clair parc */
+  opacity: .85;
+}
+/* Rivière */
+.mk-river {
+  position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;
+}
+/* Labels quartiers */
+.mk-qlabel {
+  position: absolute;
+  font-size: 8px; font-weight: 800; letter-spacing: .1em;
+  color: rgba(0,0,0,.45); text-transform: uppercase;
+  pointer-events: none; z-index: 2;
+  font-family: var(--display);
+}
+/* Avatar pins (médecins avec photo) */
+.mk-apin {
+  position: absolute; display: flex; flex-direction: column; align-items: center;
+  transform: translateX(-50%); z-index: 4;
+}
+.mk-avatar {
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,.25);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-family: var(--mono); font-weight: 800;
+  color: #fff; overflow: hidden;
+}
+.mk-av-orange { background: linear-gradient(135deg, #ff9800, #f57c00); }
+.mk-av-teal   { background: linear-gradient(135deg, #26c6da, #00838f); }
+.mk-av-blue   { background: linear-gradient(135deg, #42a5f5, #1565c0); font-size: 14px; }
+.mk-pin-label {
+  background: #fff; font-size: 9px; font-weight: 600;
+  padding: 2px 7px; border-radius: 8px; margin-top: 3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  white-space: nowrap; color: #333; font-family: var(--display);
+}
+/* Pins numérotés bleus */
+.mk-numpin {
+  position: absolute; display: flex; flex-direction: column; align-items: center;
+  transform: translateX(-50%); z-index: 4;
+}
+.mk-numcircle {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: #1976d2; border: 2.5px solid #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 800; color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25); font-family: var(--display);
+}
+.mk-nc-green { background: #2e7d32; }
+/* Point position actuelle */
+.mk-me {
+  position: absolute; transform: translate(-50%,-50%);
+  display: flex; align-items: center; justify-content: center; z-index: 5;
+}
+.mk-me-ring {
+  position: absolute; width: 22px; height: 22px; border-radius: 50%;
   background: rgba(33,150,243,.2);
-  animation: me-pulse 2s ease-out infinite;
+  animation: mk-pulse 2s ease-out infinite;
 }
-@keyframes me-pulse {
-  0%   { transform: scale(1); opacity: .7; }
-  100% { transform: scale(2.5); opacity: 0; }
-}
-.msm-me-dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: #2196f3; border: 1.5px solid white;
-  box-shadow: 0 0 6px rgba(33,150,243,.6);
-  position: relative; z-index: 1;
+@keyframes mk-pulse { 0% { transform:scale(1); opacity:.8; } 100% { transform:scale(3); opacity:0; } }
+.mk-me-dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: #2196f3; border: 2.5px solid #fff;
+  box-shadow: 0 0 8px rgba(33,150,243,.5); position: relative; z-index: 1;
 }
 
-/* Bottom result card */
-.msm-result {
-  background: rgba(7,16,10,.9);
-  display: flex; align-items: center; gap: 8px;
-  padding: 8px 10px; flex-shrink: 0;
-  border-top: 1px solid rgba(13,206,107,.15);
+/* Bottom navigation */
+.mk-nav {
+  background: #fff; border-top: 1px solid rgba(0,0,0,.08);
+  display: flex; align-items: center; justify-content: space-around;
+  padding: 10px 0 14px; flex-shrink: 0;
 }
-.msm-result-icon { font-size: 14px; flex-shrink: 0; }
-.msm-result-info { flex: 1; min-width: 0; }
-.msm-result-name {
-  font-family: var(--display); font-size: 9px;
-  font-weight: 700; color: #f4f3f1; white-space: nowrap;
-  overflow: hidden; text-overflow: ellipsis;
+.mk-nav-item {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  font-size: 10px; color: #999; font-family: var(--display); font-weight: 500;
 }
-.msm-result-dist {
-  font-family: var(--mono); font-size: 7px;
-  color: rgba(244,243,241,.4); letter-spacing: .04em;
+.mk-nav-item svg { width: 18px; height: 18px; stroke: #999; }
+.mk-nav-active { color: var(--green-deep); }
+.mk-nav-active svg { stroke: var(--green-deep); }
+.mk-nav-center { display: flex; align-items: center; justify-content: center; }
+.mk-nav-orb {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(0,0,0,.06); border: 1.5px solid rgba(0,0,0,.1);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
 }
-.msm-open { color: var(--green); }
-.msm-result-nav {
-  font-size: 12px; color: var(--green); flex-shrink: 0; font-weight: 700;
+.mk-nav-avatar {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--green), var(--green-deep));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 800; color: #fff; font-family: var(--mono);
 }
 
 /* Small rotating badge */

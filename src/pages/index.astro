@@ -460,116 +460,146 @@ import Layout from '../layouts/Layout.astro';
         <!-- ── DROITE : visuel Karvon-style ── -->
         <div class="marary-visual">
 
-          <!-- Ghost background title -->
           <div class="marary-bg-title" aria-hidden="true">MARARY</div>
-
-          <!-- Cercles radiaux -->
           <div class="m-ring r1"></div>
           <div class="m-ring r2"></div>
 
-          <!-- ★ Grand badge circulaire — "être en bonne santé n'est pas facultatif" -->
+          <!-- Grand badge circulaire rotatif -->
           <div class="m-text-circle">
             <svg viewBox="0 0 340 340" class="m-text-circle-svg">
-              <defs>
-                <path id="mtc" d="M170,170 m-150,0 a150,150 0 1,1 300,0 a150,150 0 1,1 -300,0"/>
-              </defs>
-              <text class="mtc-text">
-                <textPath href="#mtc">être en bonne santé n'est pas facultatif · être en bonne santé n'est pas facultatif · </textPath>
-              </text>
+              <defs><path id="mtc" d="M170,170 m-150,0 a150,150 0 1,1 300,0 a150,150 0 1,1 -300,0"/></defs>
+              <text class="mtc-text"><textPath href="#mtc">être en bonne santé n'est pas facultatif · être en bonne santé n'est pas facultatif · </textPath></text>
             </svg>
             <div class="mtc-core">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
             </div>
           </div>
 
-          <!-- ★ Phone réel + map overlay ── -->
-          <div class="marary-phone-wrap">
-            <img src="/assets/phone-mockup.png" alt="MARARY app" class="marary-phone-img" />
+          <!-- CSS iPhone 14 Pro (map style Berlin) -->
+          <div class="mk-phone">
+            <!-- Dynamic island -->
+            <div class="mk-island"></div>
+            <!-- Boutons latéraux déco -->
+            <div class="mk-btn-vol"></div>
+            <div class="mk-btn-pwr"></div>
 
-            <!-- Map overlay (perspective-matched au téléphone) -->
-            <div class="marary-screen-map">
-
-              <!-- Topbar app -->
-              <div class="msm-bar">
-                <span class="msm-logo-text">▸ MARARY</span>
-                <span class="msm-loc-text">📍 Antananarivo</span>
+            <div class="mk-screen">
+              <!-- Status bar -->
+              <div class="mk-status">
+                <span class="mk-time">15:17</span>
+                <div class="mk-status-icons">
+                  <svg viewBox="0 0 20 12" fill="currentColor"><rect x="0"  y="3" width="3" height="9" rx="1"/><rect x="4"  y="2" width="3" height="10" rx="1"/><rect x="8"  y="1" width="3" height="11" rx="1"/><rect x="12" y="0" width="3" height="12" rx="1"/></svg>
+                  <svg viewBox="0 0 25 12" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="20" height="10" rx="2"/><rect x="22" y="3.5" width="2" height="5" rx="1" fill="currentColor" stroke="none"/><rect x="2" y="2" width="15" height="8" rx="1" fill="currentColor" stroke="none"/></svg>
+                </div>
               </div>
 
-              <!-- Fond carte -->
-              <div class="msm-mapbg">
+              <!-- App top bar -->
+              <div class="mk-appbar">
+                <div class="mk-applabel">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                  <span>MARARY</span>
+                </div>
+                <div class="mk-compass">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="currentColor"/></svg>
+                </div>
+              </div>
+
+              <!-- MAP VIEW (Google Maps style) -->
+              <div class="mk-map">
                 <!-- Routes SVG -->
-                <svg class="msm-roads" viewBox="0 0 100 100" preserveAspectRatio="none">
-                  <line x1="0"  y1="38" x2="100" y2="38" stroke="white" stroke-width="1.2"/>
-                  <line x1="0"  y1="62" x2="100" y2="62" stroke="white" stroke-width=".6"/>
-                  <line x1="28" y1="0"  x2="28"  y2="100" stroke="white" stroke-width=".7"/>
-                  <line x1="62" y1="0"  x2="62"  y2="100" stroke="white" stroke-width="1.2"/>
-                  <line x1="0"  y1="0"  x2="55"  y2="100" stroke="white" stroke-width=".5" opacity=".6"/>
-                  <line x1="45" y1="0"  x2="100" y2="80"  stroke="white" stroke-width=".5" opacity=".6"/>
+                <svg class="mk-roads" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <!-- Avenues principales -->
+                  <line x1="0" y1="42" x2="100" y2="42" stroke="#fff" stroke-width="2.5"/>
+                  <line x1="0" y1="68" x2="100" y2="68" stroke="#fff" stroke-width="1.2"/>
+                  <line x1="0" y1="20" x2="100" y2="20" stroke="#fff" stroke-width="1"/>
+                  <line x1="30" y1="0" x2="30" y2="100" stroke="#fff" stroke-width="1.5"/>
+                  <line x1="60" y1="0" x2="60" y2="100" stroke="#fff" stroke-width="2.5"/>
+                  <line x1="82" y1="0" x2="82" y2="100" stroke="#fff" stroke-width="1"/>
+                  <!-- Diagonales -->
+                  <line x1="0" y1="5" x2="45" y2="75" stroke="#fff" stroke-width="1" opacity=".7"/>
+                  <line x1="55" y1="0" x2="100" y2="60" stroke="#fff" stroke-width="1" opacity=".7"/>
                 </svg>
 
-                <!-- Zones colorées (quartiers) -->
-                <div class="msm-zone z1"></div>
-                <div class="msm-zone z2"></div>
+                <!-- Parcs (verts) -->
+                <div class="mk-park" style="top:5%;left:62%;width:32%;height:30%;border-radius:40% 35% 45% 30%"></div>
+                <div class="mk-park" style="top:62%;left:3%;width:22%;height:28%;border-radius:30% 45% 35% 40%"></div>
+                <div class="mk-park" style="top:72%;left:65%;width:28%;height:22%;border-radius:35% 30% 40% 45%"></div>
 
-                <!-- Pin 1 — Hôpital -->
-                <div class="msm-pin" style="top:24%;left:38%">
-                  <div class="msm-pin-bubble">🏥<span>Hôpital</span></div>
-                  <div class="msm-pin-needle"></div>
+                <!-- Rivière -->
+                <svg class="mk-river" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <path d="M 58 0 Q 55 20 62 35 Q 68 50 60 65 Q 52 80 58 100" stroke="#90caf9" stroke-width="2.5" fill="none" opacity=".8"/>
+                </svg>
+
+                <!-- Labels quartiers -->
+                <div class="mk-qlabel" style="top:10%;left:8%">ANALAKELY</div>
+                <div class="mk-qlabel" style="top:50%;left:62%">AMPEFILOHA</div>
+                <div class="mk-qlabel" style="top:72%;left:32%">ISOTRY</div>
+
+                <!-- Avatar pin — Dr. Rabe (médecin généraliste) -->
+                <div class="mk-apin" style="top:16%;left:52%">
+                  <div class="mk-avatar mk-av-orange">R</div>
+                  <div class="mk-pin-label">Dr. Rabe</div>
                 </div>
 
-                <!-- Pin 2 — Pharmacie -->
-                <div class="msm-pin" style="top:50%;left:18%">
-                  <div class="msm-pin-bubble msm-pb-blue">💊<span>Pharmacie</span></div>
-                  <div class="msm-pin-needle msm-pn-blue"></div>
+                <!-- Avatar pin — Dr. Andriana (gynéco) -->
+                <div class="mk-apin" style="top:36%;left:14%">
+                  <div class="mk-avatar mk-av-teal">A</div>
+                  <div class="mk-pin-label">Dr. Andriana</div>
                 </div>
 
-                <!-- Pin 3 — Médecin -->
-                <div class="msm-pin" style="top:35%;left:64%">
-                  <div class="msm-pin-bubble msm-pb-purple">👨‍⚕️<span>Dr. Andriana</span></div>
-                  <div class="msm-pin-needle msm-pn-purple"></div>
+                <!-- Avatar pin — Hôpital Befelatanana -->
+                <div class="mk-apin" style="top:28%;left:68%">
+                  <div class="mk-avatar mk-av-blue">🏥</div>
+                  <div class="mk-pin-label">Befelatanana</div>
                 </div>
 
-                <!-- Pin 4 — Clinique -->
-                <div class="msm-pin" style="top:58%;left:55%">
-                  <div class="msm-pin-bubble">🏪<span>Clinique</span></div>
-                  <div class="msm-pin-needle"></div>
+                <!-- Blue num pin — Pharmacie -->
+                <div class="mk-numpin" style="top:55%;left:38%">
+                  <div class="mk-numcircle">8</div>
+                  <div class="mk-pin-label">Pharmacie</div>
                 </div>
 
-                <!-- Position actuelle (pulse bleu) -->
-                <div class="msm-me" style="top:63%;left:45%">
-                  <div class="msm-me-pulse"></div>
-                  <div class="msm-me-dot"></div>
+                <!-- Blue num pin — Clinique -->
+                <div class="mk-numpin" style="top:76%;left:72%">
+                  <div class="mk-numcircle mk-nc-green">6</div>
+                  <div class="mk-pin-label">Clinique</div>
+                </div>
+
+                <!-- Position actuelle -->
+                <div class="mk-me" style="top:58%;left:52%">
+                  <div class="mk-me-ring"></div>
+                  <div class="mk-me-dot"></div>
                 </div>
               </div>
 
-              <!-- Carte résultat bas -->
-              <div class="msm-result">
-                <div class="msm-result-icon">💊</div>
-                <div class="msm-result-info">
-                  <div class="msm-result-name">Pharmacie Razafimahefa</div>
-                  <div class="msm-result-dist">0.3 km · <span class="msm-open">Ouvert</span></div>
+              <!-- Bottom nav (comme Berlin app) -->
+              <div class="mk-nav">
+                <div class="mk-nav-item mk-nav-active">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                  <span>Carte</span>
                 </div>
-                <div class="msm-result-nav">→</div>
+                <div class="mk-nav-center">
+                  <div class="mk-nav-orb"></div>
+                </div>
+                <div class="mk-nav-item">
+                  <div class="mk-nav-avatar">M</div>
+                  <span>Moi</span>
+                </div>
               </div>
-
             </div>
           </div>
 
-          <!-- Floating stat chip -->
+          <!-- Stat chip -->
           <div class="m-stat-chip">
             <div class="m-stat-num">70%</div>
             <div class="m-stat-sub">sans soins adaptés</div>
           </div>
 
-          <!-- Small rotating badge bottom-right -->
+          <!-- Small rotating badge -->
           <div class="m-circ-badge mcb-2">
             <svg viewBox="0 0 130 130" class="mcb-svg">
-              <defs>
-                <path id="mcp2" d="M65,65 m-54,0 a54,54 0 1,1 108,0 a54,54 0 1,1 -108,0"/>
-              </defs>
-              <text class="mcb-text">
-                <textPath href="#mcp2">EN DÉVELOPPEMENT · 2025 · MARARY · </textPath>
-              </text>
+              <defs><path id="mcp2" d="M65,65 m-54,0 a54,54 0 1,1 108,0 a54,54 0 1,1 -108,0"/></defs>
+              <text class="mcb-text"><textPath href="#mcp2">EN DÉVELOPPEMENT · 2025 · MARARY · </textPath></text>
             </svg>
             <div class="mcb-core mcb-core--green"><span>🚀</span></div>
           </div>
