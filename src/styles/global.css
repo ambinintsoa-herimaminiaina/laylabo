@@ -909,34 +909,24 @@ body {
 }
 .mtc-core svg { width: 22px; height: 22px; stroke: var(--green); }
 
-/* ── Phone image + map EN AVANT (approche inversée) ──────────
-   Logique :
-   - phone image : z-index 1 + mix-blend-mode:multiply
-     → fond blanc PNG × fond sombre section = transparent ✓
-     → cadre noir × fond sombre = noir visible ✓
-     → écran blanc × fond sombre = sombre (mais couvert par le map) ✓
-   - screen-map : z-index 2 (AU DESSUS de l'image), positionné sur la zone écran
-     → couvre l'écran du téléphone avec la map ✓
-     → ne peut PAS déborder car overflow:hidden + dimensions fixées ✓
-   ─────────────────────────────────────────────────────────── */
+/* ── Phone image rognée + map derrière ── */
 .marary-phone-wrap {
   position: relative; z-index: 2;
   width: 520px;
 }
 .marary-phone-img {
   width: 100%; display: block;
-  position: relative; z-index: 1;
-  mix-blend-mode: multiply; /* fond blanc PNG → transparent */
+  position: relative; z-index: 2;
+  mix-blend-mode: multiply;
+  /* Image rognée = pas de fond blanc autour → multiply fonctionne sans overflow */
 }
 .marary-screen-map {
   position: absolute;
-  /* Zone écran du phone-mockup.png (perspective ~15°Y) */
-  top: 9.5%; left: 20.5%; right: 8%; bottom: 8%;
-  z-index: 2;           /* AU DESSUS du phone image */
-  overflow: hidden;
-  border-radius: 22px 18px 18px 22px;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
   background: #f2ead3;
   display: flex; flex-direction: column;
+  overflow: hidden;
 }
 /* App bar MARARY (haut de la map) */
 .msm-appbar {
