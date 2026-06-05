@@ -500,33 +500,58 @@ import Layout from '../layouts/Layout.astro';
                 <path d="M 58 0 Q 55 20 62 35 Q 68 50 60 65 Q 52 80 58 100" stroke="#90caf9" stroke-width="3" fill="none" opacity=".9"/>
               </svg>
               <!-- Labels quartiers -->
-              <div class="mk-qlabel" style="top:10%;left:8%">ANALAKELY</div>
-              <div class="mk-qlabel" style="top:50%;left:62%">AMPEFILOHA</div>
-              <div class="mk-qlabel" style="top:72%;left:32%">ISOTRY</div>
-              <!-- Avatars médecins -->
-              <div class="mk-apin" style="top:16%;left:50%">
-                <div class="mk-avatar mk-av-orange">R</div>
+              <div class="mk-qlabel" style="top:8%;left:6%">ANALAKELY</div>
+              <div class="mk-qlabel" style="top:44%;left:58%">AMPEFILOHA</div>
+              <div class="mk-qlabel" style="top:68%;left:28%">ISOTRY</div>
+              <div class="mk-qlabel" style="top:22%;left:6%">FARAVOHITRA</div>
+              <div class="mk-qlabel" style="top:82%;left:60%">TSARALALANA</div>
+
+              <!-- Avatars médecins — initiales sur fond coloré (style app réelle) -->
+              <div class="mk-apin" style="top:12%;left:48%">
+                <div class="mk-avatar" style="background:linear-gradient(135deg,#5c6bc0,#3949ab);font-size:14px;font-weight:800">RB</div>
                 <div class="mk-pin-label">Dr. Rabe</div>
               </div>
-              <div class="mk-apin" style="top:34%;left:13%">
-                <div class="mk-avatar mk-av-teal">A</div>
+              <div class="mk-apin" style="top:30%;left:11%">
+                <div class="mk-avatar" style="background:linear-gradient(135deg,#26a69a,#00796b);font-size:14px;font-weight:800">AR</div>
                 <div class="mk-pin-label">Dr. Andriana</div>
               </div>
-              <div class="mk-apin" style="top:26%;left:67%">
-                <div class="mk-avatar mk-av-blue">🏥</div>
+              <div class="mk-apin" style="top:20%;left:65%">
+                <div class="mk-avatar mk-av-hospital" style="font-size:9px;font-weight:900;line-height:1.2">CHU<br/>BFT</div>
                 <div class="mk-pin-label">Befelatanana</div>
               </div>
-              <!-- Pins numérotés -->
-              <div class="mk-numpin" style="top:54%;left:37%">
-                <div class="mk-numcircle">8</div>
+              <div class="mk-apin" style="top:8%;left:20%">
+                <div class="mk-avatar" style="background:linear-gradient(135deg,#ec407a,#c2185b);font-size:14px;font-weight:800">SV</div>
+                <div class="mk-pin-label">Dr. Soavy</div>
+              </div>
+              <div class="mk-apin" style="top:58%;left:72%">
+                <div class="mk-avatar" style="background:linear-gradient(135deg,#ff7043,#e64a19);font-size:14px;font-weight:800">MR</div>
+                <div class="mk-pin-label">Dr. Miora</div>
+              </div>
+              <div class="mk-apin" style="top:78%;left:18%">
+                <div class="mk-avatar mk-av-clinic" style="font-size:10px;font-weight:900">CHU</div>
+                <div class="mk-pin-label">Tambohobe</div>
+              </div>
+
+              <!-- Pins pharmacies/cliniques — cohérents par catégorie -->
+              <div class="mk-numpin" style="top:48%;left:34%">
+                <div class="mk-numcircle" style="background:#1976d2">💊</div>
                 <div class="mk-pin-label">Pharmacie</div>
               </div>
-              <div class="mk-numpin" style="top:74%;left:70%">
-                <div class="mk-numcircle mk-nc-green">6</div>
+              <div class="mk-numpin" style="top:68%;left:66%">
+                <div class="mk-numcircle mk-nc-green">+</div>
                 <div class="mk-pin-label">Clinique</div>
               </div>
+              <div class="mk-numpin" style="top:38%;left:55%">
+                <div class="mk-numcircle" style="background:#1976d2">💊</div>
+                <div class="mk-pin-label">Pharmacie</div>
+              </div>
+              <div class="mk-numpin" style="top:84%;left:40%">
+                <div class="mk-numcircle" style="background:#546e7a">+</div>
+                <div class="mk-pin-label">Cabinet</div>
+              </div>
+
               <!-- Position actuelle -->
-              <div class="mk-me" style="top:57%;left:51%">
+              <div class="mk-me" style="top:52%;left:48%">
                 <div class="mk-me-ring"></div>
                 <div class="mk-me-dot"></div>
               </div>
@@ -550,7 +575,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
 
             <!-- Image téléphone PAR DESSUS (mix-blend-mode: multiply supprime le blanc) -->
-            <img src="/assets/phone.png" alt="MARARY" class="marary-phone-img" />
+            <img src="/assets/iphone.png" alt="MARARY" class="marary-phone-img" />
 
           </div>
 
