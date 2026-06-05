@@ -921,13 +921,17 @@ body {
 }
 .marary-screen-map {
   position: absolute;
-  /* Calibré à la zone écran réelle du téléphone rogné (perspective tilt ~15°) */
-  top: 9%; left: 11%; right: 4%; bottom: 6%;
+  top: 9%; left: 14%; right: 3%; bottom: 6%;
   z-index: 1;
   background: #f2ead3;
   display: flex; flex-direction: column;
   overflow: hidden;
-  border-radius: 12px 8px 8px 12px;
+  border-radius: 10px 7px 7px 10px;
+  /* Perspective pour suivre le tilt du téléphone */
+  transform: perspective(800px) rotateY(10deg) rotateX(-1deg);
+  transform-origin: 5% 50%;
+  /* clip-path empêche tout débordement issu du transform 3D */
+  clip-path: inset(0 round 10px 7px 7px 10px);
 }
 /* App bar MARARY (haut de la map) */
 .msm-appbar {
